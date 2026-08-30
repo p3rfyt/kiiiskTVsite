@@ -1427,3 +1427,64 @@ body.page-body {
 .rating-card-link:hover .rating-nick {
     color: #f57011 !important; /* Оранжевый ник при наведении */
 }
+
+/* ==========================================
+   Блок сыгранных карт (Map Pool)
+   ========================================== */
+
+/* Общий контейнер блока */
+.mappool-container {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 600px;
+}
+
+/* Карточка отдельной карты */
+.map-card {
+    position: relative;
+    height: 48px;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Темное наложение по всей картинке для читаемости текста */
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 100%);
+    transition: background 0.2s ease;
+}
+
+/* Подсветка картинки при наведении курсора */
+.map-card:hover .map-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* Название карты */
+.map-name {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.1;
+}
+
+/* Количество игр */
+.map-count {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
