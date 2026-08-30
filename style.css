@@ -773,6 +773,11 @@ body.page-body {
     color: #f97316 !important;
 }
 
+/* На всякий случай убираем подчёркивание и у самой ссылки */
+.player-card-link {
+    text-decoration: none !important;
+}
+
 /* ================================================== */
 /* СТИЛИ ДЛЯ СТРАНИЦЫ ПРОФИЛЯ ИГРОКА (kiiiskTV)       */
 /* ================================================== */
@@ -1175,3 +1180,20 @@ body.page-body {
     font-weight: 600; /* Делаем ники чуть жирнее */
 }
 
+/* Убираем подчёркивание для ссылок и текстов с никами */
+.player-card a,
+.player-name,
+.nick-white,
+.nick-gray {
+    text-decoration: none !important;
+}
+
+/* Белый цвет ника (по умолчанию) */
+.nick-white {
+    color: #ffffff;
+}
+
+/* Серый цвет ника */
+.nick-gray {
+    color: #94a3b8;
+}
