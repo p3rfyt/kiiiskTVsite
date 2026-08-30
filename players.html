@@ -3,48 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KiiiskTV - Рейтинг игроков</title>
+    <title>Рейтинг игроков — kiiiskTV</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-body">
 
+    <!-- Шапка -->
     <header class="header">
-    <div class="header-container">
-        <a href="index.html" class="logo-link">
-            <div class="logo-badge">k</div>
-            <span class="logo-text">
-                kiiisk<span class="logo-highlight">TV</span>
-            </span>
-        </a>
-        <nav class="nav-links">
-            <a href="index.html" class="nav-item">Главная</a>
-            <a href="teams.html" class="nav-item">Команды</a>
-            <a href="players.html" class="nav-item">Рейтинг игроков</a>
-            <a href="all-players.html" class="nav-item">Все игроки</a>
-            <a href="tournaments.html" class="nav-item">Турниры</a>
-        </nav>
-    </div>
-</header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-badge">k</div>
+                <span class="logo-text">kiiisk<span class="logo-highlight">TV</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">Главная</a>
+                <a href="teams.html" class="nav-item">Команды</a>
+                <a href="players.html" class="nav-item active">Рейтинг игроков</a>
+                <a href="all-players.html" class="nav-item">Все игроки</a>
+                <a href="tournaments.html" class="nav-item">Турниры</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="main-container">
 
-        <section class="section-container">
-            <h1 class="section-title">
-                <span class="title-bar"></span>
-                Рейтинг игроков
-            </h1>
+        <!-- 1. Дата обновления -->
+        <div class="update-badge">
+            <span class="update-icon">📅</span>
+            <span>Рейтинг обновлен: <strong>XX августа 2026 г.</strong></span>
+        </div>
 
-            <div class="info-box" style="text-align: center; padding: 3rem 1rem;">
-                <p class="info-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Раздел находится в разработке</p>
-                <p class="info-content">Когда киск рейтинг сделает, тогда и появится.</p>
+        <!-- 2. Информация о рейтинге -->
+        <section class="info-banner">
+            <div class="info-banner-glow"></div>
+            <div class="info-banner-content">
+                <h1 class="info-banner-title">Рейтинг игроков</h1>
+                <p class="info-banner-text">
+                    <strong>Как рассчитываются поинты:</strong> 
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. ТОП-30 Игроков -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                Топ-30 Игроков
+            </h2>
+
+            <div class="rating-list">
+
+                <!-- 1 МЕСТО -->
+                <a href="Players/kiiisk.html" class="rating-card-link">
+                    <div class="rating-card rank-1">
+                        <div class="rating-rank">#1</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-white">Kiiisk</div>
+                            <div class="rating-realname">Максим Крысков</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">999</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 2 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card rank-2">
+                        <div class="rating-rank">#2</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-white">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">990</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 3 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card rank-3">
+                        <div class="rating-rank">#3</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-white">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">980</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 4 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#4</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-white">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">970</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#5</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-white">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">960</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 6 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#6</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-gray">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">950</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#7</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-gray">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">940</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 8 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#8</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-gray">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">930</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 9 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#9</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-gray">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">920</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 10 МЕСТО -->
+                <a href="#" class="rating-card-link">
+                    <div class="rating-card">
+                        <div class="rating-rank">#10</div>
+                        <div class="rating-info">
+                            <div class="rating-nick nick-gray">-</div>
+                            <div class="rating-realname">-</div>
+                        </div>
+                        <div class="rating-points">
+                            <span class="points-val">910</span>
+                            <span class="points-lbl">PTS</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 11 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#11</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">909</span><span class="points-lbl">PTS</span></div></div></a>
+                
+                <!-- 12 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#12</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">908</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 13 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#13</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">907</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 14 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#14</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">906</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 15 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#15</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">905</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 16 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#16</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">904</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 17 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#17</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">903</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 18 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#18</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">901</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 19 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#19</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">870</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 20 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#20</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">830</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 21 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#21</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">790</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 22 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#22</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">750</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 23 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#23</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">710</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 24 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#24</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">680</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 25 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#25</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">640</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 26 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#26</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">600</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 27 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#27</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">560</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 28 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#28</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">520</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 29 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#29</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">490</span><span class="points-lbl">PTS</span></div></div></a>
+
+                <!-- 30 МЕСТО -->
+                <a href="#" class="rating-card-link"><div class="rating-card"><div class="rating-rank">#30</div><div class="rating-info"><div class="rating-nick nick-gray">-</div><div class="rating-realname">-</div></div><div class="rating-points"><span class="points-val">450</span><span class="points-lbl">PTS</span></div></div></a>
+
             </div>
         </section>
 
     </main>
 
     <footer class="footer">
-    <p>© 2026 kiiiskTV — Создатель Perf.</p>
-</footer>
+        <p>© 2026 kiiiskTV — Создатель Perf.</p>
+    </footer>
 
 </body>
 </html>

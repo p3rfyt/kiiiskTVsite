@@ -1303,3 +1303,127 @@ body.page-body {
 .btn-secondary:hover {
     background-color: #475569;
 }
+
+/* ==========================================
+   Страница рейтинга игроков (players.html)
+   ========================================== */
+
+/* Плашка даты обновления */
+.update-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.update-badge strong {
+    color: #f97316;
+}
+
+/* Список рейтинга (карточки друг под другом) */
+.rating-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rating-card {
+    display: flex;
+    align-items: center;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 12px 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.rating-card:hover {
+    border-color: #475569;
+    transform: translateX(4px);
+}
+
+/* Позиция (Номер места) */
+.rating-rank {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #64748b;
+    width: 50px;
+}
+
+/* Информация (Ник + Имя/Фамилия) */
+.rating-info {
+    flex-grow: 1;
+}
+
+.rating-nick {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.rating-realname {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Блок поинтов */
+.rating-points {
+    text-align: right;
+}
+
+.points-val {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f97316;
+}
+
+.points-lbl {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Особые рамки для ТОП-3 */
+.rating-card.rank-1 {
+    border: 1px solid #eab308;
+    background: linear-gradient(90deg, #1e293b 0%, rgba(234, 179, 8, 0.1) 100%);
+}
+.rating-card.rank-1 .rating-rank { color: #eab308; }
+
+.rating-card.rank-2 {
+    border: 1px solid #94a3b8;
+    background: linear-gradient(90deg, #1e293b 0%, rgba(148, 163, 184, 0.1) 100%);
+}
+.rating-card.rank-2 .rating-rank { color: #94a3b8; }
+
+.rating-card.rank-3 {
+    border: 1px solid #b45309;
+    background: linear-gradient(90deg, #1e293b 0%, rgba(180, 83, 9, 0.1) 100%);
+}
+.rating-card.rank-3 .rating-rank { color: #b45309; }
+
+/* Обёртка-ссылка для карточки игрока */
+.rating-card-link {
+    text-decoration: none !important;
+    display: block;
+    color: inherit;
+}
+
+/* Эффект наведения только для тех карточек, у которых есть ссылка */
+.rating-card-link:hover .rating-card {
+    border-color: #f97316 !important; /* Оранжевая рамка при наведении */
+    transform: translateX(6px);
+    cursor: pointer;
+}
+
+.rating-card-link:hover .rating-nick {
+    color: #f97316 !important; /* Оранжевый ник при наведении */
+}
