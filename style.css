@@ -1109,3 +1109,10 @@ body.page-body {
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* Особый стиль для значения побед (золотой цвет) */
+.profile-stat-value-wins {
+    color: #ffd700;
+    font-weight: bold;
+}
+
