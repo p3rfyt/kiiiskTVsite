@@ -1197,3 +1197,109 @@ body.page-body {
 .nick-gray {
     color: #94a3b8;
 }
+
+/* ==========================================
+   Информационный блок (Главная страница)
+   ========================================== */
+.info-banner {
+    position: relative;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Свечение на фоне */
+.info-banner-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(249, 115, 22, 0.15); /* Оранжевое свечение */
+    filter: blur(60px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.info-banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Плашка над заголовком с пульсирующей точкой */
+.info-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f97316;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #f97316;
+}
+
+/* Заголовок и текст */
+.info-banner-title {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.info-banner-text {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 0 20px 0;
+}
+
+/* Кнопки действия */
+.info-banner-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: #f97316;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ea580c;
+}
+
+.btn-secondary {
+    background-color: #334155;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+}
