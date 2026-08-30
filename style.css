@@ -1116,3 +1116,61 @@ body.page-body {
     font-weight: bold;
 }
 
+/* 🥇 1 место (Золотая рамка и яркий бейдж) */
+.card-first-place {
+    border: 2px solid #ffd700 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3) !important;
+}
+
+.badge-gold {
+    background-color: #ffd700 !important;
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+/* 🥈 2 место (Серебряная рамка и яркий бейдж) */
+.card-second-place {
+    border: 2px solid #c0c0c0 !important;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.25) !important;
+}
+
+.badge-silver {
+    background-color: #c0c0c0 !important;
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+/* Обёртка для выравнивания приза и бейджа */
+.place-prize-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Стиль плашки с выигрышем */
+.prize-tag {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(44, 146, 129, 0.699);
+}
+
+/* Названия команд (PerfTeam, $w1n2s и др.) */
+.team-name {
+    font-size: 22px !important; /* Было меньше, можно поставить 20px–24px */
+    font-weight: bold;
+}
+
+/* Весь блок состава (Состав: p3rf + pinkman) */
+.team-roster {
+    font-size: 16px !important; /* Было около 12px–14px */
+}
+
+/* Имена игроков внутри состава */
+.roster-highlight {
+    font-size: 16px !important;
+    font-weight: 600; /* Делаем ники чуть жирнее */
+}
