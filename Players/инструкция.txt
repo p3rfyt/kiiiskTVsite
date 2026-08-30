@@ -1,0 +1,176 @@
+Отличное решение! Чтобы в будущем ты мог свободно добавлять новые страницы игроков, новых игроков в список, новые турниры и новые команды без моей помощи, давай разберем простые инструкции и чистые HTML-шаблоны («заготовки»).
+
+📋 Шпаргалка: Как добавлять новые элементы
+1. Как добавить НОВОГО ИГРОКА в список (all-players.html)
+Открываешь all-players.html, находишь <div class="grid-4-col" id="playersGrid"> и вставляешь туда этот блок:
+
+HTML
+<!-- Карточка игрока -->
+<a href="Players/ИМЯ_ФАЙЛА.html" class="player-card-link" data-nickname="НИКНЕЙМ_НИЖНИМ_РЕГИСТРОМ">
+    <div class="player-card" style="justify-content: center; text-align: center;">
+        <h3 class="player-card-nickname">НИКНЕЙМ</h3>
+    </div>
+</a>
+⚠️ Важно для работы поиска: В data-nickname="..." пиши ник только маленькими буквами. Например: data-nickname="shitsuren".
+
+2. Как создать СТРАНИЦУ НОВОГО ИГРОКА (в папке Players/)
+Создаешь новый файл в папке Players/ (например, Players/shitsuren.html) и вставляешь в него этот готовый универсальный шаблон:
+
+HTML
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НИКНЕЙМ — Профиль игрока | kiiiskTV</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-body">
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <div class="logo-badge">k</div>
+                <span class="logo-text">
+                    kiiisk<span class="logo-highlight">TV</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-item">Главная</a>
+                <a href="../teams.html" class="nav-item">Команды</a>
+                <a href="../players.html" class="nav-item">Рейтинг игроков</a>
+                <a href="../all-players.html" class="nav-item nav-item-active">Все игроки</a>
+                <a href="../tournaments.html" class="nav-item">Турниры</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- 1. Шапка профиля -->
+        <section class="section-container">
+            <div class="profile-header-card">
+                
+                <!-- Фото (Замени name-photo.jpg на имя твоей картинки) -->
+                <div class="profile-avatar-container">
+                    <img src="ФОТО_ИГРОКА.jpg" alt="НИКНЕЙМ" class="profile-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Заглушка, если нет фото (Замени P на первую букву ника) -->
+                    <div class="profile-avatar-placeholder">P</div>
+                </div>
+
+                <!-- Информация -->
+                <div class="profile-info-main">
+                    <div class="profile-title-flex">
+                        <h1 class="profile-nickname">НИКНЕЙМ</h1>
+                        <span class="profile-country">
+                            <span class="flag-icon">🇷🇺</span> Россия
+                        </span>
+                    </div>
+
+                    <p class="profile-fullname">Имя Фамилия</p>
+
+                    <!-- Возраст и Призовые -->
+                    <div class="profile-stats-grid">
+                        <div class="profile-stat-item">
+                            <span class="stat-label">Возраст</span>
+                            <span class="stat-value">18 лет</span>
+                        </div>
+                        <div class="profile-stat-item">
+                            <span class="stat-label">Призовые</span>
+                            <span class="stat-value highlight-prize">$0</span>
+                        </div>
+                    </div>
+
+                    <!-- Соцсети (Если соцсети нет — просто удали нужную строчку <a>) -->
+                    <div class="profile-socials">
+                        <a href="ССЫЛКА_VK" target="_blank" class="social-link">VK</a>
+                        <a href="ССЫЛКА_TG" target="_blank" class="social-link">Telegram</a>
+                        <a href="ССЫЛКА_TWITCH" target="_blank" class="social-link">Twitch</a>
+                        <a href="ССЫЛКА_YT" target="_blank" class="social-link">YouTube</a>
+                        <a href="ССЫЛКА_STEAM" target="_blank" class="social-link">Steam</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. Победы на турнирах -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                Победы на турнирах 🏆
+            </h2>
+
+            <div class="profile-list-grid">
+                <!-- Заготовка трофея (Скопируй если побед несколько) -->
+                <a href="../kdc4.html" class="profile-list-item trophy-item">
+                    <div class="item-badge gold">1 место</div>
+                    <div class="item-title">НАЗВАНИЕ ТУРНИРА</div>
+                    <div class="item-sub">Команда: НАЗВАНИЕ КОМАНДЫ</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Команды -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                Команды
+            </h2>
+
+            <div class="profile-list-grid">
+                <!-- Карточка команды -->
+                <div class="profile-list-item">
+                    <div class="item-title">НАЗВАНИЕ КОМАНДЫ</div>
+                    <div class="item-sub">Текущая команда</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. История турниров -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                История турниров
+            </h2>
+
+            <div class="profile-list-grid">
+                <!-- Заготовка турнира (Меняй gold / silver / bronze) -->
+                <a href="../kdc4.html" class="profile-list-item">
+                    <div class="item-badge gold">1 место</div>
+                    <div class="item-title">НАЗВАНИЕ ТУРНИРА</div>
+                    <div class="item-sub">Формат: Duo</div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 kiiiskTV — Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
+3. Как добавить НОВЫЙ ТУРНИР в список турниров (tournaments.html)
+Открываешь tournaments.html, находишь блок <div class="grid-2-col"> и вставляешь нужный вариант карточки:
+
+Если турнир ЗАВЕРШЕН и есть страница:
+
+HTML
+<a href="ИМЯ_ФАЙЛА_ТУРНИРА.html" class="tournament-card">
+    <span class="tournament-card-status status-past">Завершен</span>
+    <h3 class="tournament-card-title">#6 Kiiisk Duo Cup 6</h3>
+    <p class="tournament-card-sub">Формат: Duo • Победитель: НИКНЕЙМ</p>
+</a>
+Если турнир АНОНСИРОВАН (еще не прошел):
+
+HTML
+<div class="tournament-card">
+    <span class="tournament-card-status status-past">Анонс</span>
+    <h3 class="tournament-card-title">#6 Kiiisk Duo Cup 6</h3>
+    <p class="tournament-card-sub">Победители: —</p>
+</div>
+💡 Полезный совет:
+Сохрани этот ответ или скопируй его в отдельный текстовый файл (например, инструкция.txt) в папке проекта. Когда тебе нужно будет добавить игрока или турнир, ты просто скопируешь отсюда заготовку за 10 секунд!

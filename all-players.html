@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все игроки — kiiiskTV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body">
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-badge">k</div>
+                <span class="logo-text">
+                    kiiisk<span class="logo-highlight">TV</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">Главная</a>
+                <a href="teams.html" class="nav-item">Команды</a>
+                <a href="players.html" class="nav-item">Рейтинг игроков</a>
+                <a href="all-players.html" class="nav-item nav-item-active">Все игроки</a>
+                <a href="tournaments.html" class="nav-item">Турниры</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <section class="section-container">
+            <div class="page-header-flex">
+                <h1 class="section-title" style="margin-bottom: 0;">
+                    <span class="title-bar"></span>
+                    Все игроки
+                </h1>
+                
+                <!-- Поле поиска -->
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="playerSearchInput" 
+                        placeholder="Поиск игрока по нику..." 
+                        onkeyup="searchPlayers()"
+                    >
+                </div>
+            </div>
+
+            <!-- Сетка со всеми игроками -->
+            <div class="grid-4-col" id="playersGrid">
+                
+                <!-- Игрок: Perf -->
+                <a href="Players/perf.html" class="player-card-link" data-nickname="perf">
+                    <div class="player-card" style="justify-content: center; text-align: center;">
+                        <h3 class="player-card-nickname">Perf</h3>
+                    </div>
+                </a>
+
+                <!-- Игрок: kiiisk -->
+                <a href="Players/kiiisk.html" class="player-card-link" data-nickname="kiiisk">
+                    <div class="player-card" style="justify-content: center; text-align: center;">
+                        <h3 class="player-card-nickname">kiiisk</h3>
+                    </div>
+                </a>
+
+                <!-- Игрок: mismi13 -->
+                <a href="Players/m1smi13.html" class="player-card-link" data-nickname="mismi13">
+                    <div class="player-card" style="justify-content: center; text-align: center;">
+                        <h3 class="player-card-nickname">m1smi13</h3>
+                    </div>
+                </a>
+
+                <!-- Игрок: n1kson1k -->
+                <a href="Players/n1kson1k.html" class="player-card-link" data-nickname="n1kson1k">
+                    <div class="player-card" style="justify-content: center; text-align: center;">
+                        <h3 class="player-card-nickname">n1kson1k</h3>
+                    </div>
+                </a>
+
+                <!-- Игрок: pinkman -->
+                <a href="Players/pinkman.html" class="player-card-link" data-nickname="pinkman">
+                    <div class="player-card" style="justify-content: center; text-align: center;">
+                        <h3 class="player-card-nickname">pinkman</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Сообщение, если ничего не найдено -->
+            <div id="noResults" class="info-box" style="display: none; text-align: center; margin-top: 20px;">
+                <p class="info-content">Игрок с таким ником не найден.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+    <p>© 2026 kiiiskTV — Создатель Perf.</p>
+</footer>
+
+    <!-- Скрипт поиска -->
+    <script>
+        function searchPlayers() {
+            const input = document.getElementById('playerSearchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.player-card-link');
+            let hasResults = false;
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-nickname').toLowerCase();
+                if (searchData.includes(input)) {
+                    card.style.display = "block";
+                    hasResults = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            document.getElementById('noResults').style.display = hasResults ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
