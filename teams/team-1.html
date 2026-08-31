@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль команды — kiiiskTV</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="page-body">
 
@@ -84,6 +85,14 @@
             </div>
         </div>
 
+        <!-- БЛОК: График результатов -->
+        <div class="tp-content-block">
+            <h2 class="tp-block-title">История занятых мест на турнирах</h2>
+            <div class="tp-chart-wrapper">
+                <canvas id="teamRankChart"></canvas>
+            </div>
+        </div>
+
         <!-- БЛОК 3: Достижения -->
         <div class="tp-content-block">
             <h2 class="tp-block-title">Достижения</h2>
@@ -103,6 +112,62 @@
         </div>
 
     </main>
+
+            <script>
+            const ctx = document.getElementById('teamRankChart').getContext('2d');
+
+            // Градиент заливки под линией
+            const fillGradient = ctx.createLinearGradient(0, 0, 0, 300);
+            fillGradient.addColorStop(0, 'rgba(255, 215, 0, 0.25)');
+            fillGradient.addColorStop(1, 'rgba(255, 215, 0, 0.0)');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    // 1. Сюда добавляй названия новых турниров
+                    labels: ['Kiiisk 5 vs 5', 'Kiiisk Trio', 'Kiiisk Duo Cup 2', 'Kiiisk Duo Cup 4', 'Kiiisk Duo Cup 5'],
+                    datasets: [{
+                        label: 'Занятое место',
+                        // 2. Сюда добавляй места (числа) по порядку
+                        data: [1, 7, 1, 2, 9],
+                        borderColor: '#ffd700',
+                        borderWidth: 3,
+                        backgroundColor: fillGradient,
+                        fill: true,
+                        tension: 0.3, // Сглаживание линии
+                        pointBackgroundColor: '#ffd700',
+                        pointBorderColor: '#121620',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#94a3b8', font: { weight: '600' } }
+                        },
+                        y: {
+                            reverse: true, // 1-е место наверху
+                            min: 1,
+                            suggestedMax: 8, // Ниже 8 места сетка сама растянется, если добавишь число больше
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: {
+                                color: '#ffd700',
+                                stepSize: 1,
+                                callback: function(value) { return '#' + value; }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
 
     <footer class="footer">
         <p>© 2026 kiiiskTV — Создатель Perf.</p>

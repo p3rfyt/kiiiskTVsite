@@ -1877,3 +1877,11 @@ body.fame-page-bg {
         justify-content: center;
     }
 }
+
+/* Контейнер графика */
+.tp-chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+}
