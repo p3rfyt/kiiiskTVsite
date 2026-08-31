@@ -1488,3 +1488,392 @@ body.page-body {
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
+
+/* ==========================================
+   ЗАЛ СЛАВЫ — СТИЛИ И ФОН (fame-)
+   ========================================== */
+
+/* Уникальный фон для страницы Зала Славы */
+body.fame-page-bg {
+    background: #080a0f linear-gradient(180deg, #0f131d 0%, #080a0f 100%) !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Эффекты мягкого золотисто-синего свечения по бокам экрана */
+.fame-side-glow {
+    position: absolute;
+    top: 150px;
+    width: 300px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+    filter: blur(90px);
+}
+
+.glow-left {
+    left: -150px;
+    background: #ffd700;
+}
+
+.glow-right {
+    right: -150px;
+    background: #3b82f6;
+}
+
+/* Блок заголовка по центру */
+.fame-title-wrapper {
+    text-align: center;
+    margin: 10px 0 35px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.fame-main-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffd700;
+    background: linear-gradient(135deg, #fff2a3 0%, #ffd700 50%, #cca100 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6)) 
+            drop-shadow(0 0 25px rgba(255, 215, 0, 0.3));
+}
+
+.fame-subtitle {
+    font-size: 1rem;
+    color: #94a3b8;
+    margin: 0 auto;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+/* Сетка карточек */
+.fame-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Выделенный блок команды */
+.fame-card {
+    background: linear-gradient(145deg, rgba(22, 27, 38, 0.9) 0%, rgba(13, 16, 23, 0.95) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 18px;
+    padding: 22px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.fame-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 14px 30px rgba(255, 215, 0, 0.15);
+}
+
+/* Шапка карточки */
+.fame-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 14px;
+}
+
+.fame-team-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* Золотая надпись "Легендарное Дуо" */
+.fame-tag {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Блок с двумя аватарами */
+.fame-players {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.fame-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.fame-avatar-wrapper {
+    width: 250px;
+    height: 250px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    background: #090b10;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.fame-card:hover .fame-avatar-wrapper {
+    transform: scale(1.04);
+    border-color: #ffd700;
+}
+
+.fame-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ники под фото */
+.fame-nickname {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #e2e8f0;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .fame-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   ПРОФИЛЬ КОМАНДЫ (tp-) — ИЗОЛИРОВАННЫЕ СТИЛИ
+   ========================================== */
+
+/* 1. Главный блок команды */
+.tp-main-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, #161b26 0%, #0d1017 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tp-photos-group {
+    display: flex;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.tp-player-frame {
+    width: 100px;
+    height: 100px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.35);
+    background: #090b10;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.tp-player-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tp-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.tp-team-name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Статистика в первом блоке */
+.tp-stats-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tp-stat-item {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 10px 16px;
+    min-width: 120px;
+}
+
+.tp-stat-item.tp-gold-item {
+    background: rgba(255, 215, 0, 0.08);
+    border-color: rgba(255, 215, 0, 0.25);
+}
+
+.tp-stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.tp-stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.tp-gold-text {
+    color: #ffd700;
+}
+
+/* 2. Полоска с победными турнирами */
+.tp-trophy-stripe {
+    background: #121620;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.tp-stripe-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tp-trophy-list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.tp-trophy-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    padding: 12px 14px;
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.tp-trophy-card:hover {
+    background: rgba(255, 215, 0, 0.16);
+    border-color: #ffd700;
+    transform: scale(1.03); /* Легкое увеличение вместо сдвига вверх */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.25); /* Аккуратное золотое свечение */
+}
+
+.tp-trophy-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.tp-trophy-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #000;
+    background: #ffd700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 6px 0 4px 0;
+    text-transform: uppercase;
+}
+
+.tp-trophy-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* 3 и 4. Блоки "Достижения" и "Информация" */
+.tp-content-block {
+    background: #121620;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.tp-block-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+}
+
+.tp-achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tp-achievements-list li {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.tp-custom-text {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 650px) {
+    .tp-main-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tp-stats-grid {
+        justify-content: center;
+    }
+}

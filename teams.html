@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команды — kiiiskTV</title>
+    <title>Зал славы — kiiiskTV</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-body">
+<body class="page-body fame-page-bg">
 
-    <!-- Навигация -->
+    <!-- Боковые визуальные эффекты (свечение по бокам экрана) -->
+    <div class="fame-side-glow glow-left"></div>
+    <div class="fame-side-glow glow-right"></div>
+
+    <!-- Шапка -->
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
@@ -19,7 +23,7 @@
             </a>
             <nav class="nav-links">
                 <a href="index.html" class="nav-item">Главная</a>
-                <a href="teams.html" class="nav-item nav-item-active">Команды</a>
+                <a href="teams.html" class="nav-item nav-item-active">Зал славы</a>
                 <a href="players.html" class="nav-item">Рейтинг игроков</a>
                 <a href="all-players.html" class="nav-item">Все игроки</a>
                 <a href="tournaments.html" class="nav-item">Турниры</a>
@@ -29,387 +33,43 @@
 
     <main class="main-container">
 
-        <section class="section-container">
-            <h1 class="section-title">
-                <span class="title-bar"></span>
-                Команды
-            </h1>
-            <h2 class="section-title">
-                Команды, которые занимали минимум 3-4 место
-            </h2>
+        <!-- Центрированный блок заголовка -->
+        <div class="fame-title-wrapper">
+            <h1 class="fame-main-title">Зал Славы</h1>
+            <p class="fame-subtitle">Легендарные команды, навсегда вошедшие в историю kiiisk Турниров</p>
+        </div>
 
-            <!-- Сетка карточек команд -->
-            <div class="grid-2-col">
+        <!-- Сетка карточек команд -->
+        <div class="fame-grid">
 
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Perf Team</h3>
-                        <span class="team-card-wins">🏆 2 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">p3rf</span>
-                            <span class="roster-player-tag">Pinkman</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Porno</h3>
-                        <span class="team-card-wins">🏆 1 победа</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Graffith</span>
-                            <span class="roster-player-tag">romie33</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Lower Members</h3>
-                        <span class="team-card-wins">🏆 1 победа</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">m1smi13</span>
-                            <span class="roster-player-tag">N1kson1k</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Kup3r</h3>
-                        <span class="team-card-wins">🏆 1 победа</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">p3rf</span>
-                            <span class="roster-player-tag">Demon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">VNext</h3>
-                        <span class="team-card-wins">🏆 1 победа</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">iJazZzOFF</span>
-                            <span class="roster-player-tag">3pleS</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Antyhype</h3>
-                        <span class="team-card-wins">🏆 1 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">antyhype666</span>
-                            <span class="roster-player-tag">doroku</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Мамкины Знахари</h3>
-                        <span class="team-card-wins">🏆 1 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Demon</span>
-                            <span class="roster-player-tag">y0ungdaddy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">nolimit</h3>
-                        <span class="team-card-wins">🏆 1 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">ENJ</span>
-                            <span class="roster-player-tag">R0g111</span>
-                            <span class="roster-player-tag">denyacs</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Young Eggs</h3>
-                        <span class="team-card-wins">🏆 1 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">m1smi13</span>
-                            <span class="roster-player-tag">d1nkkkkk</span>
-                            <span class="roster-player-tag">foreveralon3</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка c победой -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Сказка</h3>
-                        <span class="team-card-wins">🏆 1 победы</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">m1smi13</span>
-                            <span class="roster-player-tag">Spellshop</span>
-                            <span class="roster-player-tag">p0likek</span>
-                            <span class="roster-player-tag">n1ksonik</span>
-                            <span class="roster-player-tag">Telega_sk</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">kiRpi4i</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">spreey0</span>
-                            <span class="roster-player-tag">mlg_konchik</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Ytobimignu</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">-Erk0-</span>
-                            <span class="roster-player-tag">Golovach Lena</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Team Egoist</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">lxhering</span>
-                            <span class="roster-player-tag">mura</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Remember us</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">m1smi13</span>
-                            <span class="roster-player-tag">N1kson1k</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Пчёлы</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Shershulla</span>
-                            <span class="roster-player-tag">Trezix</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">team Mynraf</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Mynraf</span>
-                            <span class="roster-player-tag">zxctelo4ka</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">$w1n2s</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">K1eshny</span>
-                            <span class="roster-player-tag">Master_X</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Brather 67</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">kerfox</span>
-                            <span class="roster-player-tag">Aribon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">DEEP</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">yoshidarero</span>
-                            <span class="roster-player-tag">karayy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Rodyar</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">pinkman</span>
-                            <span class="roster-player-tag">caiooqz</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Pr3Kisk</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">p3rf</span>
-                            <span class="roster-player-tag">Kiiisk</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Пиво с Водкой</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">hokageth</span>
-                            <span class="roster-player-tag">haslin</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Похуй Проебали</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Rog111</span>
-                            <span class="roster-player-tag">zoned</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Карточка без побед -->
-                <a href="#" class="team-card">
-                    <div class="team-card-header">
-                        <h3 class="team-card-title">Сила пиво</h3>
-                        <span class="team-card-wins zero-wins">🏆 0 побед</span>
-                    </div>
-                    <div class="team-card-roster">
-                        <span class="roster-label">Состав:</span>
-                        <div class="roster-players">
-                            <span class="roster-player-tag">Shadow</span>
-                            <span class="roster-player-tag">Seylor</span>
-                        </div>
-                    </div>
-                </a>
-
-
+            <!-- КАРТОЧКА КОМАНДЫ 1 -->
+            <a href="teams/team-1.html" class="fame-card">
+                <!-- Верхняя плашка внутри карточки -->
+                <div class="fame-header">
+                    <span class="fame-team-name">mismi13 и n1kson1k</span>
+                    <span class="fame-tag">Легендарное Дуо</span>
+                </div>
                 
-            </div>
-        </section>
+                <!-- Блок с двумя аватарами и никами -->
+                <div class="fame-players">
+                    <div class="fame-player">
+                        <div class="fame-avatar-wrapper">
+                            <img src="Image/Players/m1smi13LEG.png" alt="mismi13" class="fame-avatar">
+                        </div>
+                        <span class="fame-nickname">mismi13</span>
+                    </div>
+
+                    <div class="fame-player">
+                        <div class="fame-avatar-wrapper">
+                            <img src="Image/Players/n1kson1kLEG.png" alt="n1kson1k" class="fame-avatar">
+                        </div>
+                        <span class="fame-nickname">n1kson1k</span>
+                    </div>
+                </div>
+            </a>
+
+            
+        </div>
 
     </main>
 
