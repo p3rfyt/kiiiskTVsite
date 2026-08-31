@@ -6,6 +6,8 @@
     <title>Perf — Профиль игрока | kiiiskTV</title>
     <!-- Выходим из папки Players в корень к style.css -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Библиотека Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="page-body">
 
@@ -132,6 +134,17 @@
             </div>
         </section>
 
+        <!-- БЛОК ГРАФИКА РЕЗУЛЬТАТОВ -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                График мест на турнирах
+            </h2>
+            <div class="player-chart-container" style="position: relative; width: 100%; height: 300px;">
+                <canvas id="playerRankChart"></canvas>
+            </div>
+        </section>
+
         <!-- Блок всех турниров -->
         <section class="section-container">
             <h2 class="section-title">
@@ -173,8 +186,72 @@
     </main>
 
     <footer class="footer">
-    <p>© 2026 kiiiskTV — Создатель Perf.</p>
-</footer>
+        <p>© 2026 kiiiskTV — Создатель Perf.</p>
+    </footer>
+
+    <!-- Скрипт инициализации графика -->
+    <script>
+        const playerCtx = document.getElementById('playerRankChart').getContext('2d');
+
+        const playerGradient = playerCtx.createLinearGradient(0, 0, 0, 300);
+        playerGradient.addColorStop(0, 'rgba(59, 130, 246, 0.25)');
+        playerGradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
+
+        const playerCustomLabels = ['9-12 место', '3-4 место', '3-4 место', '1 место', '3-4 место', '3-4 место', '1 место', '1 место', '5-8 место'];
+
+        new Chart(playerCtx, {
+            type: 'line',
+            data: {
+                labels: ['Kiiisk Wingman', 'Kiiisk Trio', 'Kiiisk Wingman S2', 'Kiiisk Wingman 2.0', 'Kiiisk Duo Cup 1', 'Kiiisk Duo Cup 2', 'Kiiisk Duo Cup 3', 'Kiiisk Duo Cup 4', 'Kiiisk Duo Cup 5'],
+                datasets: [{
+                    label: 'Занятое место',
+                    data: [9, 3, 3, 1, 3, 3, 1, 1, 5],
+                    borderColor: '#3b82f6',
+                    borderWidth: 3,
+                    backgroundColor: playerGradient,
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#60a5fa',
+                    pointBorderColor: '#0f172a',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const index = context.dataIndex;
+                                return 'Результат игрока: ' + playerCustomLabels[index];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: '#94a3b8', font: { weight: '600' } }
+                    },
+                    y: {
+                        reverse: true,
+                        min: 1,
+                        suggestedMax: 16,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: {
+                            color: '#60a5fa',
+                            stepSize: 1,
+                            callback: function(value) { return '#' + value; }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
