@@ -1,0 +1,236 @@
+/* kiiiskTV — лента трофеев */
+.profile-trophy-ribbon {
+    margin: 18px 0 0;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(24, 29, 33, .98), rgba(13, 16, 19, .98));
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .16);
+}
+
+.profile-trophy-ribbon__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 14px 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.profile-trophy-ribbon__title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 850;
+    letter-spacing: .01em;
+}
+
+.profile-trophy-ribbon__title::before {
+    content: "";
+    width: 4px;
+    height: 18px;
+    border-radius: 4px;
+    background: var(--accent, #b7ff2a);
+    box-shadow: 0 0 12px rgba(183, 255, 42, .22);
+}
+
+.profile-trophy-ribbon__hint {
+    margin: 3px 0 0 13px;
+    color: #737d80;
+    font-size: 10px;
+}
+
+.profile-trophy-ribbon__count {
+    color: #aab3b5;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.profile-trophy-ribbon__track {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(183, 255, 42, .35) transparent;
+}
+
+.profile-trophy {
+    position: relative;
+    flex: 0 0 164px;
+    min-height: 142px;
+    padding: 10px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    border-right: 1px solid rgba(255, 255, 255, .07);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .012), transparent);
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        border-color .18s ease;
+}
+
+.profile-trophy:last-child {
+    border-right: 0;
+}
+
+.profile-trophy--link {
+    cursor: pointer;
+}
+
+.profile-trophy:hover {
+    z-index: 2;
+    background:
+        radial-gradient(circle at 50% 28%, rgba(183, 255, 42, .10), transparent 42%),
+        rgba(183, 255, 42, .035);
+    border-color: rgba(183, 255, 255, .12);
+    transform: translateY(-2px);
+}
+
+.profile-trophy__art {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 7px 11px rgba(0, 0, 0, .48))
+        drop-shadow(0 0 9px rgba(255, 255, 255, .07));
+    margin-bottom: 4px;
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.profile-trophy:hover .profile-trophy__art {
+    transform: translateY(-3px) scale(1.06);
+    filter:
+        drop-shadow(0 10px 14px rgba(0, 0, 0, .55))
+        drop-shadow(0 0 13px rgba(183, 255, 42, .12));
+}
+
+.profile-trophy__name {
+    max-width: 145px;
+    font-size: 11px;
+    font-weight: 850;
+    line-height: 1.2;
+}
+
+.profile-trophy__meta {
+    max-width: 145px;
+    margin-top: 4px;
+    color: #8e989a;
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+.profile-trophy__details {
+    width: calc(100% - 8px);
+    margin-top: 8px;
+    padding: 8px 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 9px;
+    background: rgba(10, 13, 15, .96);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .28);
+    color: #aeb6b8;
+    font-size: 9px;
+    line-height: 1.25;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    transition:
+        opacity .18s ease,
+        max-height .2s ease,
+        padding .2s ease,
+        margin .2s ease;
+}
+
+.profile-trophy:hover .profile-trophy__details {
+    opacity: 1;
+    max-height: 92px;
+    margin-top: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+.profile-trophy__series {
+    color: #dce1e2;
+    font-weight: 800;
+}
+
+.profile-trophy__open {
+    margin-top: 2px;
+    color: var(--accent, #b7ff2a);
+    font-weight: 800;
+}
+
+.profile-trophy__unavailable {
+    color: #737d80;
+}
+
+@media (max-width: 700px) {
+    .profile-trophy {
+        flex-basis: 148px;
+        min-height: 138px;
+    }
+
+    .profile-trophy__art {
+        width: 66px;
+        height: 66px;
+    }
+}
+
+
+/* Статистика в профиле */
+.player-profile-stat-section { margin-top:18px; }
+.player-profile-stat-subtitle { color:#8e989a; font-size:12px; margin:0 0 12px; }
+.player-profile-stat-grid {
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:10px;
+}
+.player-profile-stat-card {
+    min-height:78px;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(20,24,28,.88);
+    border:1px solid rgba(255,255,255,.07);
+}
+.player-profile-stat-card .stat-label { display:block; color:#8e989a; font-size:11px; margin-bottom:7px; }
+.player-profile-stat-card strong { font-size:21px; letter-spacing:-.02em; }
+.player-profile-stat-empty {
+    grid-column:1/-1;
+    padding:18px;
+    border:1px dashed rgba(255,255,255,.1);
+    border-radius:12px;
+    color:#8e989a;
+    background:rgba(20,24,28,.55);
+}
+.player-profile-recent { margin-top:14px; }
+.player-profile-recent h3 { font-size:14px; margin:0 0 9px; }
+.player-profile-match-row {
+    display:grid;
+    grid-template-columns:64px 1fr auto;
+    align-items:center;
+    gap:12px;
+    padding:11px 12px;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+.player-profile-match-result { font-size:11px; font-weight:800; color:#b7ff2a; }
+.player-profile-match-result.loss { color:#ff6f78; }
+.player-profile-match-result.draw { color:#d5d9da; }
+.player-profile-match-title { font-size:12px; font-weight:700; }
+.player-profile-match-meta { color:#8e989a; font-size:11px; margin-top:3px; }
+.player-profile-match-score { font-size:16px; }
+@media (max-width:900px){ .player-profile-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
+@media (max-width:520px){ .player-profile-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));} .player-profile-match-row{grid-template-columns:56px 1fr auto;gap:8px;} }

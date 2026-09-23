@@ -6,8 +6,9 @@
     <title>caiooqz — Профиль игрока | kiiiskTV</title>
     <!-- Выходим из папки Players в корень к style.css -->
     <link rel="stylesheet" href="../style.css?v=3">
+    <link rel="stylesheet" href="../trophies.css?v=1">
 </head>
-<body class="page-body">
+<body class="page-body" data-player-id="Caiooqz">
 
     <!-- Навигация -->
     <header class="header">
@@ -20,10 +21,10 @@
             </a>
             <nav class="nav-links">
                 <a href="../index.html" class="nav-item">Главная</a>
-                <a href="../players.html" class="nav-item">Рейтинг игроков</a>
-                <a href="../all-players.html" class="nav-item nav-item-active">Все игроки</a>
+                <a href="../players.html" class="nav-item">Kiiisk рейтинг</a>
+                <a href="../all-players.html" class="nav-item">Все игроки</a>
                 <a href="../tournaments.html" class="nav-item">Турниры</a>
-                <a href="../teams.html" class="nav-item">Зал славы</a>
+                <a href="../matches-history.html" class="nav-item">История матчей</a>
             </nav>
         </div>
     </header>
@@ -71,19 +72,19 @@
 
             </div>
         </section>
+        <!-- Лента трофеев: данные берутся из data/trophies.js -->
+        <div id="playerTrophyRibbon"></div>
 
-        <!-- Блок Побед -->
-        <section class="section-container">
-            <h2 class="section-title">
-                <span class="title-bar"></span>
-                Победы на турнирах 🏆
-            </h2>
 
-            <div class="profile-list-grid">
-                
-                
-            </div>
+        <!-- Автоматическая статистика игрока -->
+        <section class="section-container player-profile-stat-section">
+            <h2 class="section-title"><span class="title-bar"></span>Статистика игрока</h2>
+            <p class="player-profile-stat-subtitle" id="playerStatsSubtitle">Пока нема.</p>
+            <div id="playerProfileStats" class="player-profile-stat-grid"></div>
+            <div id="playerProfileRecent" class="player-profile-recent"></div>
         </section>
+
+        
 
         <!-- Блок Команд -->
         <section class="section-container">
@@ -129,5 +130,49 @@
     <p>© 2026 kiiiskTV — Создатель Perf.</p>
 </footer>
 
+
+    <!-- player-trophies-runtime -->
+    <script src="../data/trophies.js"></script>
+    <script src="../js/player-trophies.js"></script>
+
+    <!-- player-profile-stats-runtime -->
+    <script src="../data/matches.js"></script>
+    <script src="../js/stats-engine.js"></script>
+    <script>
+    (() => {
+        const id = document.body.dataset.playerId;
+        const matches = Array.isArray(window.KIIISK_MATCHES) ? window.KIIISK_MATCHES : [];
+        const all = window.KiiiskStats?.calculate(matches) || [];
+        const stats = all.find(p => p.id === id);
+        const grid = document.getElementById('playerProfileStats');
+        const recent = document.getElementById('playerProfileRecent');
+        const subtitle = document.getElementById('playerStatsSubtitle');
+        const fmt = n => Number(n || 0).toFixed(2);
+        if (!stats) {
+            grid.innerHTML = '<div class="player-profile-stat-empty">Для этого игрока пока нет записанных матчей. После добавления матча его статистика появится здесь автоматически.</div>';
+            recent.innerHTML = '';
+            return;
+        }
+        const cards = [
+            ['Матчи', stats.matches], ['Победы', stats.wins], ['Поражения', stats.losses],
+            ['Winrate', fmt(stats.winrate) + '%'], ['Kills', stats.kills], ['Deaths', stats.deaths],
+            ['Assists', stats.assists], ['K/D', fmt(stats.kd)], ['KDA', fmt(stats.kda)]
+        ];
+        grid.innerHTML = cards.map(([label,value]) => `<div class="player-profile-stat-card"><span class="stat-label">${label}</span><strong>${value}</strong></div>`).join('');
+        subtitle.textContent = `Обновлено по ${stats.matches} ${stats.matches === 1 ? 'матчу' : 'матчам'}.`;
+        const playerMatches = matches.filter(m => Array.isArray(m?.teams?.team1) && (m.teams.team1.includes(id) || (Array.isArray(m?.teams?.team2) && m.teams.team2.includes(id))) || Array.isArray(m?.teams?.team2) && m.teams.team2.includes(id))
+            .sort((a,b) => String(b.date).localeCompare(String(a.date))).slice(0,5);
+        recent.innerHTML = playerMatches.length ? '<h3>Последние матчи</h3>' + playerMatches.map(m => {
+            const side = (m.teams?.team1 || []).includes(id) ? 'team1' : 'team2';
+            const other = side === 'team1' ? 'team2' : 'team1';
+            const own = Number(m.score?.[side] || 0), enemy = Number(m.score?.[other] || 0);
+            const result = own > enemy ? 'Победа' : own < enemy ? 'Поражение' : 'Ничья';
+            const cls = result === 'Поражение' ? ' loss' : result === 'Ничья' ? ' draw' : '';
+            const s = m.players?.[id] || {};
+            const kd = Number(s.deaths || 0) ? Number(s.kills || 0) / Number(s.deaths || 0) : Number(s.kills || 0);
+            return `<div class="player-profile-match-row"><span class="player-profile-match-result${cls}">${result}</span><div><div class="player-profile-match-title">${m.tournament || 'Матч'}</div><div class="player-profile-match-meta">${m.date || ''} · ${s.kills || 0} K / ${s.deaths || 0} D / ${s.assists || 0} A · K/D ${fmt(kd)}</div></div><strong class="player-profile-match-score">${own}:${enemy}</strong></div>`;
+        }).join('') : '';
+    })();
+    </script>
 </body>
 </html>

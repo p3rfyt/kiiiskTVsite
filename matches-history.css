@@ -1,0 +1,205 @@
+/* История матчей kiiiskTV */
+
+.matches-page {
+    gap: 18px;
+}
+
+.matches-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 2px;
+}
+
+.matches-intro h1 {
+    margin: 0 0 5px;
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -0.04em;
+}
+
+.matches-intro p {
+    margin: 0;
+    color: #7e8885;
+    font-size: 12px;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.match-history-card {
+    background: linear-gradient(180deg, rgba(23, 27, 29, 0.98), rgba(16, 19, 20, 0.98));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.match-history-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.match-history-tournament {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.match-history-date {
+    color: #68726f;
+    font-size: 10px;
+}
+
+.match-history-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 18px 14px;
+}
+
+.match-history-team {
+    min-width: 0;
+}
+
+.match-history-team:last-child {
+    text-align: right;
+}
+
+.match-history-team-name {
+    color: #eef2ef;
+    font-size: 14px;
+    font-weight: 850;
+    margin-bottom: 5px;
+}
+
+.match-history-roster {
+    color: #737d79;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.match-history-score {
+    min-width: 82px;
+    text-align: center;
+}
+
+.match-history-score strong {
+    display: block;
+    color: var(--accent);
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.match-history-score span {
+    display: block;
+    margin-top: 5px;
+    color: #59625f;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.match-history-stats {
+    border-top: 1px solid var(--line);
+    padding: 0 14px 14px;
+}
+
+.match-history-stats-title {
+    padding: 11px 0 8px;
+    color: #68726f;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+.match-player-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.match-player-table th {
+    padding: 7px 8px;
+    color: #59625f;
+    font-size: 8px;
+    font-weight: 800;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.match-player-table th:not(:first-child),
+.match-player-table td:not(:first-child) {
+    text-align: right;
+}
+
+.match-player-table td {
+    padding: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
+    color: #aeb6b3;
+}
+
+.match-player-table td:first-child {
+    color: #eef2ef;
+    font-weight: 750;
+}
+
+.match-player-table .winner-player td:first-child {
+    color: var(--accent);
+}
+
+.match-history-empty {
+    padding: 38px 18px;
+    text-align: center;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    color: #6f7975;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.match-history-empty strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #c8cecc;
+}
+
+@media (max-width: 620px) {
+    .matches-intro {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .match-history-main {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .match-history-team,
+    .match-history-team:last-child {
+        text-align: center;
+    }
+
+    .match-history-score {
+        order: -1;
+    }
+
+    .match-player-table {
+        min-width: 500px;
+    }
+
+    .match-history-stats {
+        overflow-x: auto;
+    }
+}

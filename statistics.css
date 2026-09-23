@@ -1,0 +1,311 @@
+/* Perf рейтинг — page-specific styles */
+.perf-page {
+    padding-top: 24px;
+}
+
+.perf-hero {
+    margin-top: 14px;
+}
+
+.perf-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 18px 0 24px;
+}
+
+.perf-summary-card {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+
+.perf-summary-card strong {
+    display: block;
+    color: var(--text);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.perf-summary-card span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.perf-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.perf-section-head .section-title {
+    margin-bottom: 5px;
+}
+
+.perf-section-subtitle {
+    margin: 0 0 0 18px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.perf-sort {
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.perf-player-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.perf-player-card {
+    display: block;
+    padding: 15px;
+    color: inherit;
+    text-decoration: none;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .012));
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.perf-player-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(200, 255, 61, .38);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .22);
+}
+
+.perf-player-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.perf-place {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.perf-score {
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 950;
+}
+
+.perf-score small {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.perf-player-main {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.perf-avatar-wrap {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: #111416;
+}
+
+.perf-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perf-avatar-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 950;
+}
+
+.perf-avatar-fallback.visible {
+    display: flex;
+}
+
+.perf-player-name {
+    min-width: 0;
+}
+
+.perf-player-name strong,
+.perf-player-name span {
+    display: block;
+}
+
+.perf-player-name strong {
+    overflow: hidden;
+    color: var(--text);
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.perf-player-name span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.perf-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.perf-stats div {
+    padding: 9px 7px;
+    background: rgba(0, 0, 0, .16);
+    border: 1px solid rgba(255, 255, 255, .045);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.perf-stats b,
+.perf-stats span {
+    display: block;
+}
+
+.perf-stats b {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.perf-stats span {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.perf-recent-list {
+    display: grid;
+    gap: 8px;
+}
+
+.perf-match-card {
+    display: grid;
+    grid-template-columns: minmax(160px, .8fr) minmax(280px, 1.2fr);
+    align-items: center;
+    gap: 18px;
+    padding: 13px 15px;
+    background: rgba(255, 255, 255, .018);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+}
+
+.perf-match-card > div:first-child strong,
+.perf-match-card > div:first-child span {
+    display: block;
+}
+
+.perf-match-card > div:first-child strong {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.perf-match-card > div:first-child span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.perf-match-teams {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    color: #c5ccca;
+    font-size: 11px;
+}
+
+.perf-match-teams span:last-child {
+    text-align: right;
+}
+
+.perf-match-teams b {
+    min-width: 52px;
+    color: var(--accent);
+    font-size: 16px;
+    text-align: center;
+}
+
+.perf-match-teams b.draw {
+    color: var(--muted);
+}
+
+.perf-empty {
+    padding: 20px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, .018);
+    border: 1px dashed var(--line);
+    border-radius: 11px;
+}
+
+@media (max-width: 900px) {
+    .perf-player-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .perf-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .perf-section-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .perf-match-card {
+        grid-template-columns: 1fr;
+    }
+
+    .perf-match-teams {
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .perf-summary {
+        gap: 7px;
+    }
+
+    .perf-summary-card {
+        padding: 13px;
+    }
+
+    .perf-summary-card strong {
+        font-size: 21px;
+    }
+
+    .perf-stats {
+        gap: 5px;
+    }
+}
