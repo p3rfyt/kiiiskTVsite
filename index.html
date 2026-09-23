@@ -3,143 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KiiiskTV</title>
+    <title>KiiiskTV — Киберспортивный портал</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-body">
 
+    <!-- Шапка сайта -->
     <header class="header">
-    <div class="header-container">
-        <a href="index.html" class="logo-link">
-            <div class="logo-badge">k</div>
-            <span class="logo-text">
-                kiiisk<span class="logo-highlight">TV</span>
-            </span>
-        </a>
-        <nav class="nav-links">
-    <a href="index.html" class="nav-item nav-item-active">Главная</a>
-    <a href="players.html" class="nav-item">Рейтинг игроков</a>
-    <a href="all-players.html" class="nav-item">Все игроки</a>
-    <a href="tournaments.html" class="nav-item">Турниры</a>
-    <a href="teams.html" class="nav-item">Зал славы</a>
-</nav>
-    </div>
-</header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-badge">K</div>
+                <span class="logo-text">
+                    kiiisk<span class="logo-highlight">TV</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item nav-item-active">Главная</a>
+                <a href="players.html" class="nav-item">Рейтинг игроков</a>
+                <a href="all-players.html" class="nav-item">Все игроки</a>
+                <a href="tournaments.html" class="nav-item">Турниры</a>
+                <a href="teams.html" class="nav-item">Зал славы</a>
+            </nav>
+        </div>
+    </header>
 
-    <main class="main-container">
-
-        <!-- Приветственный блок -->
-        <section class="tournament-hero">
-            <div class="hero-glow"></div>
-            <h1 class="hero-title">Добро пожаловать на KiiiskTV</h1>
-            <p class="hero-subtitle">
-                
-            </p>
-            <p class="hero-subtitle"></p>
-             
-            </p>
-        </section>
-
-        <!-- Информационный блок -->
-        <section class="info-banner">
-            <div class="info-banner-glow"></div>
-            <div class="info-banner-content">
-                <div class="info-banner-badge">
-                    <span class="pulse-dot"></span> Информация
-                </div>
-            <h2 class="info-banner-title">Условия попадания на KiiiskTV</h2>
-                <p class="info-banner-text">
-                    Чтобы получить ник на странице игроков, нужно поучаствовать на турнире. начиная с kiiisk duo cup 1.
-                </p>
-                <p class="info-banner-text">
-                    Чтобы получить профиль игрока, нужно иметь карточку топ игрока турнира, начиная с kiiisk duo cup 4.
-                </p>
-                <p class="info-banner-text">
-                    График в профиле от 7 турниров
-                </p>
-                <div class="info-banner-actions">
-                    <a href="https://www.twitch.tv/kiiisk_" class="btn-primary">Смотреть турниры</a>
-                    <a href="tournaments.html" class="btn-secondary">История турниров</a>
+    <!-- Главная сетка сайта -->
+    <main class="main-layout">
+        
+        <!-- ================= ЛЕВАЯ КОЛОНКА ================= -->
+        <aside class="sidebar-left">
+            
+            <!-- MVP прошлого турнира -->
+            <div class="widget-card feature-player-card">
+                <div class="widget-header">MVP прошлого турнира</div>
+                <div class="player-hero-block">
+                    <div class="player-avatar">
+                        <span class="avatar-placeholder">R</span>
+                    </div>
+                    <div class="player-info">
+                        <h3 class="player-nickname">Romie</h3>
+                        <p class="player-desc">Kiiisk Duo Cup 5 MVP</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Рейтинг игроков (Топ 10 по поинтам) -->
+<div class="widget-card">
+    <div class="widget-header">
+        <a href="ratings.html" class="widget-header-link">
+            <span>Рейтинг игроков</span>
+        </a>
+    </div>
+    <ol class="top-list">
+        <li><span class="rank">1</span> <span class="player-name">p3rf</span> <span class="badge-pts">1270 Points</span></li>
+        <li><span class="rank">2</span> <span class="player-name">pinkman</span> <span class="badge-pts">830 Points</span></li>
+        <li><span class="rank">3</span> <span class="player-name">kiRpi4i</span> <span class="badge-pts">704 Points</span></li>
+        <li><span class="rank">4</span> <span class="player-name">mismi13</span> <span class="badge-pts">568 Points</span></li>
+        <li><span class="rank">5</span> <span class="player-name">n1kson1k</span> <span class="badge-pts">500 Points</span></li>
+        <li><span class="rank">6</span> <span class="player-name">shitsuren</span> <span class="badge-pts">430 Points</span></li>
+        <li><span class="rank">7</span> <span class="player-name">Demon</span> <span class="badge-pts">333 Points</span></li>
+        <li><span class="rank">8</span> <span class="player-name">Ytobimignu</span> <span class="badge-pts">330 Points</span></li>
+        <li><span class="rank">9</span> <span class="player-name">Egoist</span> <span class="badge-pts">315 Points</span></li>
+        <li><span class="rank">10</span> <span class="player-name">MOTYXA</span> <span class="badge-pts">307 Points</span></li>
+    </ol>
+    <a href="ratings.html" class="widget-more-btn">
+        Полный рейтинг →
+    </a>
+</div>
+            
+        </aside>
+
+        <!-- ================= ЦЕНТРАЛЬНАЯ КОЛОНКА ================= -->
+        <section class="content-center">
+            
+            <!-- Главный баннер -->
+            <div class="main-hero-banner">
+                <div class="hero-badge">Новый турнир!</div>
+                <h1 class="hero-main-title">Kiiisk Fall Cup 2026</h1>
+                <p class="hero-main-sub">26-27 Сентября начинается новая серия турниров, в котором примут участие 16 команд. Будьте готовы, места ограничены!</p>
+                <div class="hero-buttons">
+                    <a href="tournament-kiiisk-6.html" class="btn-primary">Сетка и статистика</a>
+                </div>
+            </div>
+
+            <!-- Памятные события (Новости / Лента) -->
+            <div class="widget-card">
+                <div class="widget-header">Памятные события 📜</div>
+                <div class="timeline-list">
+                    
+                    <article class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">31 Августа 2026</span>
+                            <span class="timeline-tag tag-derby">Класико</span>
+                        </div>
+                        <h3 class="timeline-card-title">Эль Класико: [perf + pinkman] vs [mismi13 + n1kson1k]</h3>
+                        <p class="timeline-card-text">
+                            История противостояния насчитывает 4 матча с участием ключевых игроков составов. Со счетом 3:1 лидирует дуэт perf + pinkman.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">30 Августа 2026</span>
+                            <span class="timeline-tag tag-cup">Турнир</span>
+                        </div>
+                        <h3 class="timeline-card-title">Завершение Kiiisk Duo Cup 5</h3>
+                        <p class="timeline-card-text">
+                            Команда Porno забрала главный трофей турнира, обыграв Team kiRpi4i в гранд-финале.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">29 Августа 2026</span>
+                            <span class="timeline-tag tag-match">Матч</span>
+                        </div>
+                        <h3 class="timeline-card-title">Победа Perf Team на Mirage (13:9)</h3>
+                        <p class="timeline-card-text">
+                            Perf Team в составе с заменой (shitsuren вместо pinkman) одержала очередную победу в Эль Класико.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">9 Августа 2026</span>
+                            <span class="timeline-tag tag-record">Рекорд</span>
+                        </div>
+                        <h3 class="timeline-card-title">Исторический рекорд от p3rf</h3>
+                        <p class="timeline-card-text">
+                            Иван p3rf становится первым игроком в истории лиги KiiiskTV, выигравшим два турнира подряд (Duo Cup 3 & Duo Cup 4).
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+
         </section>
+        
 
-        <!-- Список турниров -->
-        <section class="section-container">
-            <h2 class="section-title">
-                <span class="title-bar"></span>
-                Прошлый турнир
-            </h2>
-
-            <div class="grid-2-col">
-                <a href="tournament-kiiisk-5.html" class="tournament-card">
-                    <span class="tournament-card-status status-past">Завершен</span>
-                    <h3 class="tournament-card-title">Kiiisk Duo Cup 5</h3>
-                    <p class="tournament-card-sub">Формат: 2 vs 2 (16 команд) • Победитель: Porno</p>
+        <!-- ================= ПРАВАЯ КОЛОНКА ================= -->
+        <aside class="sidebar-right">
+            
+            <!-- Блок с прошлым турниром -->
+            <div class="widget-card">
+                <div class="widget-header">Прошедший турнир</div>
+                <a href="tournament-kiiisk-5.html" class="mini-tournament-card">
+                    <div class="status-badge status-past">Завершен</div>
+                    <div class="mini-tournament-title">Kiiisk Duo Cup 5</div>
+                    <div class="mini-tournament-info">
+                        <span>Формат:</span> 2 vs 2 (16 команд)
+                    </div>
+                    <div class="mini-tournament-winner">
+                        <span>🏆 Победитель:</span> <strong>Porno</strong>
+                    </div>
                 </a>
             </div>
-        </section>
 
-<!-- Блок Памятные события -->
-<section class="section-container">
-    <h2 class="section-title">
-        <span class="title-bar"></span>
-        Памятные события 📜
-    </h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <div class="timeline-date">31 Августа 2026</div>
-            <div class="timeline-content">
-                <h3 class="timeline-title">Эль Класико</h3>
-                <p class="timeline-text">Эль Класико это матч составов [perf + pinkman] vs [mismi13 + n1kson1k]. За все время было сыграно 4 таких матча, где участие принимало минимум 3 игрока из этих составов. Со счетом 3:1 лидерство удерживает дуо [perf + pinkman] </p>
+            <!-- Виджет трансляций -->
+            <div class="widget-card stream-widget">
+                <div class="widget-header">Трансляция</div>
+                <div class="stream-box">
+                    <p>Прямые трансляции турниров проходят на Twitch канале kiiisk_</p>
+                    <a href="https://www.twitch.tv/kiiisk_" target="_blank" class="btn-twitch">
+                        📺 Смотреть на Twitch
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-date">30 Августа 2026</div>
-            <div class="timeline-content">
-                <h3 class="timeline-title">Завершение Kiiisk Duo Cup 5</h3>
-                <p class="timeline-text">Команда Porno стала победителем Kiiisk Duo Cup 5, обыграв в финале Team kiRpi4i.</p>
-            </div>
-        </div>
-        
-        <!-- Событие 1 (Самое свежее) -->
-        <div class="timeline-item">
-            <div class="timeline-date">29 Августа 2026</div>
-            <div class="timeline-content">
-                <h3 class="timeline-title">Эль Класико</h3>
-                <p class="timeline-text">Сегодня прошло очередное Эль Класико [perf + pinkman] vs [mismi13 + n1kson1k]. На карте Mirage, победу одержала команда Perf Team со счетом 13:9. Команда Perf Team играла с заменой, вместо pinkman выступил shitsuren. Но от этого игра не стала менее интересной.</p>
-            </div>
-        </div>
-
-        <!-- Событие 2 -->
-        <div class="timeline-item">
-            <div class="timeline-date">9 Августа 2026</div>
-            <div class="timeline-content">
-                <h3 class="timeline-title">Рекорд!</h3>
-                <p class="timeline-text">Иван p3rf становится первым игроком, выигрывшем два турнира подряд. Kiiisk Duo Cup 3 и Kiiisk Duo Cup 4</p>
-            </div>
-        </div>
-
-        <!-- Событие 3 (Самое старое) -->
-        <div class="timeline-item">
-            <div class="timeline-date">9 Августа 2026</div>
-            <div class="timeline-content">
-                <h3 class="timeline-title">Завершение Kiiisk Duo Cup 4</h3>
-                <p class="timeline-text">Победу в грандиозном финале одержала команда Kup3r! [perf + Demon]. Со счетом 2:1 по картам, команда Kup3r обыграла Remember us</p>
-            </div>
-        </div>
-
-    </div>
-    </section>
+        </aside>
 
     </main>
 
     <footer class="footer">
-    <p>© 2026 kiiiskTV — Создатель Perf.</p>
-</footer>
+        <p>© 2026 kiiiskTV — Создатель Perf.</p>
+    </footer>
 
 </body>
 </html>

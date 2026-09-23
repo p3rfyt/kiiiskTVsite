@@ -1885,3 +1885,572 @@ body.fame-page-bg {
     height: 300px;
     margin-top: 10px;
 }
+
+/* ==================== ТУРНИРНАЯ СЕТКА ==================== */
+
+.bracket-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 0 20px 0;
+}
+
+.bracket-container {
+    display: flex;
+    gap: 40px; /* Отступ между колонками для отображения линий */
+    min-width: 950px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.bracket-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bracket-header {
+    background: linear-gradient(135deg, #1f1f1f, #141414);
+    color: #f36c21;
+    border: 1px solid rgba(243, 108, 33, 0.3);
+    text-align: center;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.bracket-matches {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    gap: 16px;
+}
+
+/* Карточка матча */
+.match-card {
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d2d;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.match-card:hover {
+    border-color: rgba(243, 108, 33, 0.5);
+}
+
+.match-team {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+    background-color: #1a1a1a;
+    color: #a0a0a0;
+    font-size: 13px;
+    min-height: 40px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.match-team:first-child {
+    border-bottom: 1px solid #262626;
+}
+
+/* Победитель */
+.match-team.winner {
+    background-color: #242424;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Бейдж с инициалами команды */
+.team-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #888888;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.match-team.winner .team-badge {
+    background-color: rgba(243, 108, 33, 0.2);
+    color: #f36c21;
+    border: 1px solid rgba(243, 108, 33, 0.4);
+}
+
+.team-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Плашка счета */
+.score-box {
+    background-color: #262626;
+    color: #777777;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    min-width: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.match-team.winner .score-box {
+    background-color: #f36c21;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(243, 108, 33, 0.4);
+}
+
+/* ==================== ЛИНИИ СОЕДИНЕНИЯ (CONNECTORS) ==================== */
+
+/* Линии от карточек направо */
+.bracket-column:not(:last-child) .match-card::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #3d3d3d;
+    z-index: 1;
+}
+
+/* Соединительные вертикальные скобы между парами матчей */
+.bracket-column:not(:last-child) .match-card:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 2px;
+    height: calc(100% + 16px); /* Перекрывает расстояние до следующей карточки */
+    background-color: #3d3d3d;
+    z-index: 1;
+}
+
+/* Линии входа слева для 1/4, 1/2 и Финала */
+.bracket-column:not(:first-child) .match-card::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #3d3d3d;
+    z-index: 1;
+}
+
+/* ================= ОСНОВНАЯ СЕТКА HLTV-STYLE ================= */
+
+body {
+    background-color: #0f0f10;
+    color: #e1e1e1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 280px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Адаптируемость для небольших экранов */
+@media (max-width: 1100px) {
+    .main-layout {
+        grid-template-columns: 1fr 280px;
+    }
+    .sidebar-left {
+        display: none; /* Скрываем левую панель на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-right {
+        order: 3;
+    }
+}
+
+/* ================= ВИДЖЕТЫ И КАРТОЧКИ ================= */
+
+.widget-card {
+    background: #161618;
+    border: 1px solid #26262a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.widget-header {
+    background: #1f1f23;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #f36c21;
+    text-transform: uppercase;
+    border-bottom: 1px solid #26262a;
+    letter-spacing: 0.5px;
+}
+
+.widget-header-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1f1f23;
+    padding: 10px 15px;
+    border-bottom: 1px solid #26262a;
+}
+
+.widget-header-with-icon h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f36c21;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #f36c21;
+}
+
+/* ================= ГЛАВНЫЙ БАННЕР ================= */
+
+.main-hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #1f1610 0%, #161618 100%);
+    border: 1px solid rgba(243, 108, 33, 0.3);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #f36c21;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-main-title {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.hero-main-sub {
+    color: #a0a0a5;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: #f36c21;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.btn-secondary {
+    background: #26262a;
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* ================= ИНФО-БЛОК (УСЛОВИЯ) ================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.info-step {
+    background: #1a1a1d;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #f36c21;
+}
+
+.step-num {
+    font-weight: 800;
+    color: #f36c21;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-step p {
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b5;
+    line-height: 1.4;
+}
+
+/* ================= ПАМЯТНЫЕ СОБЫТИЯ ================= */
+
+.timeline-list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-card {
+    background: #1a1a1d;
+    border: 1px solid #222226;
+    padding: 12px 15px;
+    border-radius: 6px;
+}
+
+.timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.timeline-date {
+    font-size: 11px;
+    color: #777;
+}
+
+.timeline-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tag-derby { background: rgba(243, 108, 33, 0.2); color: #f36c21; }
+.tag-cup { background: rgba(0, 150, 255, 0.2); color: #0096ff; }
+.tag-match { background: rgba(0, 200, 100, 0.2); color: #00c864; }
+.tag-record { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+
+.timeline-card-title {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.timeline-card-text {
+    margin: 0;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.4;
+}
+
+/* ================= БОКОВЫЕ ПАНЕЛИ ================= */
+
+.player-hero-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+}
+
+.player-avatar {
+    width: 45px;
+    height: 45px;
+    background: #f36c21;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.player-nickname {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.player-desc {
+    margin: 2px 0 0 0;
+    font-size: 11px;
+    color: #888;
+}
+
+.player-stat-badge {
+    background: #111113;
+    padding: 8px 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-bottom: 1px solid #222226;
+    font-size: 13px;
+}
+
+.top-list .rank {
+    width: 20px;
+    font-weight: bold;
+    color: #f36c21;
+}
+
+.top-list .team-name {
+    flex: 1;
+}
+
+.mini-tournament-card {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.mini-tournament-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin: 8px 0;
+}
+
+.mini-tournament-info, .mini-tournament-winner {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+.stream-box {
+    padding: 15px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.btn-twitch {
+    display: block;
+    background: #9146FF;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Дополнительные стили для рейтинга игроков */
+.top-list .player-name {
+    flex: 1;
+    font-weight: 500;
+    color: #e1e1e1;
+}
+
+.badge-rating {
+    background: #242428;
+    color: #f36c21;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(243, 108, 33, 0.2);
+}
+
+/* Исправление отображения карточки игрока */
+.player-avatar-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Сохраняет квадратную форму серой рамки */
+    border-radius: 12px;  /* Закругление углов */
+    overflow: hidden;     /* Скрывает всё, что выходит за рамки */
+    position: relative;
+}
+
+/* Картинка карточки на всю ширину и высоту */
+.player-avatar-container img.player-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Растягивает фото на весь блок */
+    border-radius: 0 !important;  /* Сбрасывает круглую форму, если она была */
+    display: block;
+}
+
+/* Ссылка в заголовке виджета */
+.widget-header-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.widget-header-link:hover {
+    opacity: 0.85;
+}
+
+/* Кнопка "Полный рейтинг" внизу */
+.widget-more-btn {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.15);
+    color: #9da5b0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.widget-more-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
