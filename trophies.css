@@ -191,46 +191,256 @@
 }
 
 
-/* Статистика в профиле */
-.player-profile-stat-section { margin-top:18px; }
-.player-profile-stat-subtitle { color:#8e989a; font-size:12px; margin:0 0 12px; }
+
+/* Только название видно по умолчанию. Подробности открываются при наведении. */
+.profile-trophy__name {
+    margin-top: 2px;
+    max-width: 145px;
+    font-size: 11px;
+    font-weight: 850;
+    line-height: 1.25;
+}
+
+.profile-trophy__details {
+    width: calc(100% - 8px);
+    margin-top: 7px;
+    padding: 0 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: rgba(8, 11, 12, .97);
+    box-shadow: 0 10px 24px rgba(0,0,0,.30);
+    color: #aeb6b8;
+    font-size: 9px;
+    line-height: 1.25;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-3px);
+    transition: opacity .18s ease, max-height .2s ease, padding .2s ease, transform .2s ease;
+}
+
+.profile-trophy:hover .profile-trophy__details,
+.profile-trophy:focus-within .profile-trophy__details {
+    opacity: 1;
+    max-height: 110px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-color: rgba(255,255,255,.08);
+    transform: translateY(0);
+}
+
+.profile-trophy__series { color:#dce1e2; font-weight:800; }
+.profile-trophy__place { color:var(--accent,#b7ff2a); font-weight:850; }
+.profile-trophy__open { color:var(--accent,#b7ff2a); font-weight:800; }
+
+.profile-stats-shell {
+    margin-top: 4px;
+}
+.player-profile-stat-section {
+    margin-top: 18px;
+}
+.player-profile-stat-subtitle {
+    color: #737d79;
+    font-size: 11px;
+    margin: -5px 0 12px;
+}
 .player-profile-stat-grid {
-    display:grid;
-    grid-template-columns:repeat(6,minmax(0,1fr));
-    gap:10px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
 }
 .player-profile-stat-card {
-    min-height:78px;
-    padding:12px;
-    border-radius:12px;
-    background:rgba(20,24,28,.88);
-    border:1px solid rgba(255,255,255,.07);
+    position: relative;
+    min-height: 76px;
+    padding: 12px 12px 10px;
+    border: 1px solid rgba(255,255,255,.065);
+    border-radius: 11px;
+    background: linear-gradient(180deg, rgba(23,28,29,.98), rgba(14,18,19,.98));
+    overflow: hidden;
 }
-.player-profile-stat-card .stat-label { display:block; color:#8e989a; font-size:11px; margin-bottom:7px; }
-.player-profile-stat-card strong { font-size:21px; letter-spacing:-.02em; }
-.player-profile-stat-empty {
-    grid-column:1/-1;
-    padding:18px;
-    border:1px dashed rgba(255,255,255,.1);
-    border-radius:12px;
-    color:#8e989a;
-    background:rgba(20,24,28,.55);
+.player-profile-stat-card::after {
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:2px;
+    background:rgba(183,255,42,.10);
 }
-.player-profile-recent { margin-top:14px; }
-.player-profile-recent h3 { font-size:14px; margin:0 0 9px; }
-.player-profile-match-row {
+.player-profile-stat-card .stat-label {
+    display:block;
+    margin-bottom:8px;
+    color:#737d79;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+.player-profile-stat-card strong {
+    font-size:21px;
+    line-height:1;
+    letter-spacing:-.035em;
+}
+.player-profile-stat-card.is-accent strong { color:var(--accent,#b7ff2a); }
+.player-profile-stat-card.is-accent::after { background:var(--accent,#b7ff2a); box-shadow:0 0 12px rgba(183,255,42,.18); }
+
+.profile-stats-subhead {
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:12px;
+    margin:18px 0 9px;
+}
+.profile-stats-subhead h3 {
+    font-size:13px;
+    margin:0;
+}
+.profile-stats-subhead span {
+    display:block;
+    margin-top:2px;
+    color:#69736f;
+    font-size:10px;
+}
+.profile-stats-subhead a {
+    color:var(--accent,#b7ff2a);
+    font-size:10px;
+    font-weight:800;
+    text-decoration:none;
+}
+.map-stats-list {
     display:grid;
-    grid-template-columns:64px 1fr auto;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+}
+.map-stat-row {
+    padding:11px 12px;
+    border:1px solid rgba(255,255,255,.065);
+    border-radius:10px;
+    background:rgba(16,20,21,.88);
+}
+.map-stat-top,.map-stat-bottom {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+.map-stat-name { color:#e4e9e7; font-size:11px; font-weight:800; }
+.map-stat-top strong { color:var(--accent,#b7ff2a); font-size:12px; }
+.map-stat-track {
+    height:4px;
+    margin:8px 0 6px;
+    border-radius:99px;
+    background:#252d2d;
+    overflow:hidden;
+}
+.map-stat-fill {
+    display:block;
+    height:100%;
+    border-radius:inherit;
+    background:linear-gradient(90deg,#7da91d,var(--accent,#b7ff2a));
+}
+.map-stat-bottom {
+    color:#65706c;
+    font-size:9px;
+}
+.profile-recent-list {
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.profile-recent-match {
+    display:grid;
+    grid-template-columns:76px minmax(0,1fr) auto;
+    align-items:center;
+    gap:11px;
+    padding:10px 11px;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:10px;
+    background:linear-gradient(180deg,rgba(22,27,28,.98),rgba(15,19,20,.98));
+    color:inherit;
+    text-decoration:none;
+    transition:transform .16s ease,border-color .16s ease,background .16s ease;
+}
+.profile-recent-match:hover {
+    transform:translateY(-1px);
+    border-color:rgba(183,255,42,.20);
+    background:rgba(183,255,42,.025);
+}
+.recent-result {
+    font-size:9px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+}
+.recent-result.win { color:var(--accent,#b7ff2a); }
+.recent-result.loss { color:#8d9794; }
+.recent-result.draw { color:#c1c7c5; }
+.recent-main { min-width:0; }
+.recent-main strong {
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:#e9eeec;
+    font-size:11px;
+}
+.recent-main span {
+    display:block;
+    margin-top:3px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:#69736f;
+    font-size:9px;
+}
+.recent-score {
+    color:var(--accent,#b7ff2a);
+    font-size:14px;
+}
+.player-profile-stat-empty {
+    display:flex;
     align-items:center;
     gap:12px;
-    padding:11px 12px;
-    border-top:1px solid rgba(255,255,255,.06);
+    padding:17px;
+    border:1px dashed rgba(255,255,255,.10);
+    border-radius:11px;
+    background:rgba(255,255,255,.012);
 }
-.player-profile-match-result { font-size:11px; font-weight:800; color:#b7ff2a; }
-.player-profile-match-result.loss { color:#ff6f78; }
-.player-profile-match-result.draw { color:#d5d9da; }
-.player-profile-match-title { font-size:12px; font-weight:700; }
-.player-profile-match-meta { color:#8e989a; font-size:11px; margin-top:3px; }
-.player-profile-match-score { font-size:16px; }
-@media (max-width:900px){ .player-profile-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
-@media (max-width:520px){ .player-profile-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));} .player-profile-match-row{grid-template-columns:56px 1fr auto;gap:8px;} }
+.stat-empty-icon {
+    display:grid;
+    place-items:center;
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:rgba(183,255,42,.06);
+    color:#71806a;
+    font-weight:900;
+}
+.player-profile-stat-empty strong {
+    display:block;
+    color:#cbd2cf;
+    font-size:12px;
+}
+.player-profile-stat-empty span:last-child {
+    display:block;
+    margin-top:3px;
+    color:#68726f;
+    font-size:10px;
+}
+
+@media (max-width:900px) {
+    .player-profile-stat-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:620px) {
+    .player-profile-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .map-stats-list { grid-template-columns:1fr; }
+    .profile-recent-match { grid-template-columns:66px minmax(0,1fr) auto; }
+}
+
+/* Результаты турниров без внешних библиотек */
+.profile-results-list{display:flex;flex-direction:column;gap:6px}
+.profile-result-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 11px;border:1px solid rgba(255,255,255,.055);border-radius:9px;background:rgba(16,20,21,.82)}
+.profile-result-name{color:#cfd6d3;font-size:10px;font-weight:750}
+.profile-result-place{min-width:34px;text-align:right;color:#8a9490;font-size:11px;font-weight:850}
+.profile-result-first .profile-result-place{color:var(--accent,#b7ff2a)}

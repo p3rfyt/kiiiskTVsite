@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>История матчей — kiiiskTV</title>
+    <link rel="icon" type="image/png" href="Image/favicon.png">
     <link rel="stylesheet" href="style.css?v=4">
     <link rel="stylesheet" href="matches-history.css?v=1">
 </head>
@@ -42,6 +43,7 @@
     </footer>
 
     <script src="data/matches.js"></script>
+    <script src="data/players.js"></script>
     <script>
         const matches = Array.isArray(window.KIIISK_MATCHES)
             ? [...window.KIIISK_MATCHES].sort((a, b) => String(b.date).localeCompare(String(a.date)))
@@ -73,9 +75,15 @@
             return match.teamNames?.[side] || `Команда ${side === 'team1' ? '1' : '2'}`;
         }
 
+        function playerLabel(id) {
+            return window.KIIISK_PLAYERS?.[id]?.name || id;
+        }
+
         function roster(match, side) {
             const players = Array.isArray(match.teams?.[side]) ? match.teams[side] : [];
-            return players.length ? players.map(escapeHtml).join(' · ') : 'Состав не указан';
+            return players.length
+                ? players.map((id) => escapeHtml(playerLabel(id))).join(' · ')
+                : 'Состав не указан';
         }
 
         function playerRows(match, side) {
@@ -93,7 +101,7 @@
 
                 return `
                     <tr class="${won ? 'winner-player' : ''}">
-                        <td>${escapeHtml(id)}</td>
+                        <td>${escapeHtml(playerLabel(id))}</td>
                         <td>${kills}</td>
                         <td>${deaths}</td>
                         <td>${assists}</td>
@@ -106,27 +114,29 @@
         function renderMatch(match) {
             const score1 = Number(match.score?.team1) || 0;
             const score2 = Number(match.score?.team2) || 0;
-            const map = match.map ? ` · ${escapeHtml(match.map)}` : '';
+            const map = match.map ? escapeHtml(match.map) : 'Карта не указана';
+            const result = score1 === score2 ? 'Ничья' : 'Завершён';
+            const winner = score1 === score2 ? '' : score1 > score2 ? 'team1' : 'team2';
 
             return `
                 <article class="match-history-card">
                     <div class="match-history-head">
                         <span class="match-history-tournament">${escapeHtml(match.tournament || 'Турнир не указан')}</span>
-                        <span class="match-history-date">${formatDate(match.date)}${map}</span>
+                        <span class="match-history-date">${formatDate(match.date)} · ${map}</span>
                     </div>
 
                     <div class="match-history-main">
-                        <div class="match-history-team">
+                        <div class="match-history-team ${winner === 'team1' ? 'is-winner' : ''}">
                             <div class="match-history-team-name">${escapeHtml(teamName(match, 'team1'))}</div>
                             <div class="match-history-roster">${roster(match, 'team1')}</div>
                         </div>
 
                         <div class="match-history-score">
                             <strong>${score1}:${score2}</strong>
-                            <span>${score1 === score2 ? 'Ничья' : 'Завершён'}</span>
+                            <span>${result}</span>
                         </div>
 
-                        <div class="match-history-team">
+                        <div class="match-history-team ${winner === 'team2' ? 'is-winner' : ''}">
                             <div class="match-history-team-name">${escapeHtml(teamName(match, 'team2'))}</div>
                             <div class="match-history-roster">${roster(match, 'team2')}</div>
                         </div>
@@ -158,7 +168,7 @@
             ? matches.map(renderMatch).join('')
             : `
                 <div class="match-history-empty">
-                    <strong>Матчей пока нема</strong>
+                    <strong>Матчей пока нет.</strong>
                     
                 </div>
             `;

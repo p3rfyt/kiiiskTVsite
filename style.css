@@ -3206,3 +3206,8 @@ a { transition: color .18s ease, background .18s ease, border-color .18s ease, t
     .rating-card { min-height: 70px !important; }
     .footer { padding: 19px 14px !important; }
 }
+
+.team-results-list{display:flex;flex-direction:column;gap:6px}
+.team-result-row{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;border:1px solid rgba(255,255,255,.06);border-radius:8px;background:rgba(0,0,0,.12);font-size:11px;color:#cbd3d0}
+.team-result-row strong{color:#8a9490}
+.team-result-first strong{color:#b7ff2a}

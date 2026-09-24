@@ -203,3 +203,5 @@
         overflow-x: auto;
     }
 }
+
+.match-history-team.is-winner .match-history-team-name{color:var(--accent)}
