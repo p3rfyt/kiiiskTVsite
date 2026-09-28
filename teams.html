@@ -6,6 +6,7 @@
     <title>Зал славы — kiiiskTV</title>
     <link rel="icon" type="image/png" href="Image/favicon.png">
     <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="manual-profile-stats.css?v=1">
 </head>
 <body class="page-body fame-page-bg">
 
@@ -27,7 +28,7 @@
                 <a href="players.html" class="nav-item">Kiiisk рейтинг</a>
                 <a href="all-players.html" class="nav-item">Все игроки</a>
                 <a href="tournaments.html" class="nav-item">Турниры</a>
-                <a href="matches-history.html" class="nav-item">История матчей</a>
+                
             </nav>
         </div>
     </header>
@@ -72,11 +73,25 @@
             
         </div>
 
+        <section class="section-container fame-placement-chart-section">
+            <div class="profile-chart-head">
+                <div>
+                    <h2 class="section-title"><span class="title-bar"></span>История результатов</h2>
+                    <span>Места легендарной команды на турнирах</span>
+                </div>
+            </div>
+            <div class="fame-chart-card">
+                <div id="famePlacementChart"></div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
         <p>© 2026 kiiiskTV — Создатель Perf.</p>
     </footer>
+
+    <script src="js/fame-chart.js"></script>
 
 </body>
 </html>

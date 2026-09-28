@@ -9,6 +9,14 @@
  */
 
 window.KIIISK_TROPHIES = {
+    kfc: {
+        name: "Kiiisk Fall Cup 2026",
+        series: "Kiiisk Fall Cup",
+        image: "../Image/Trophies/kiskfall.png",
+        date: "26–27 Сентября 2026",
+        href: "../tournament-kiiisk-6.html"
+
+    },
     kdc1: {
         name: "Kiiisk Duo Cup 1",
         series: "Kiiisk Duo Cup",
@@ -103,7 +111,8 @@ window.KIIISK_PLAYER_TROPHIES = {
         { id: "kdc4", team: "Kup3r" },
         { id: "wingmanS2", team: "Мамкины Знахари" }
     ],
-    Romie: [{ id: "kdc5", team: "Porno" }],
+    Romie: [{ id: "kfc", team: "Porno" }, { id: "kdc5", team: "Porno" }],
+    
     m1smi13: [
         { id: "kdc2", team: "Lower Members" },
         { id: "wingman", team: "Young Eggs" },

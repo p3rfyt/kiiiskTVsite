@@ -8,6 +8,7 @@
     <!-- Выходим из папки Players в корень к style.css -->
     <link rel="stylesheet" href="../style.css?v=3">
     <link rel="stylesheet" href="../trophies.css?v=1">
+    <link rel="stylesheet" href="../manual-profile-stats.css?v=1">
 </head>
 <body class="page-body" data-player-id="Dacha">
 
@@ -25,7 +26,7 @@
                 <a href="../players.html" class="nav-item">Kiiisk рейтинг</a>
                 <a href="../all-players.html" class="nav-item">Все игроки</a>
                 <a href="../tournaments.html" class="nav-item">Турниры</a>
-                <a href="../matches-history.html" class="nav-item">История матчей</a>
+                
             </nav>
         </div>
     </header>
@@ -77,13 +78,13 @@
         <div id="playerTrophyRibbon"></div>
 
 
-        <!-- Автоматическая статистика игрока -->
-<section class="section-container player-profile-stat-section">
+
+
+        <!-- Ручная статистика игрока: данные редактируются в блоке KIIISK_MANUAL_PROFILE_STATS внизу HTML -->
+<section class="section-container manual-profile-stat-section">
     <h2 class="section-title"><span class="title-bar"></span>Статистика игрока</h2>
-    <p class="player-profile-stat-subtitle" id="playerStatsSubtitle"></p>
-    <div id="playerProfileStats" class="player-profile-stat-grid"></div>
-    <div id="playerProfileMaps"></div>
-    <div id="playerProfileRecent" class="player-profile-recent"></div>
+    <p class="manual-profile-stat-intro">Основные показатели и статистика по картам</p>
+    <div id="manualPlayerStats"></div>
 </section>
 
         
@@ -130,11 +131,48 @@
     <script src="../data/trophies.js"></script>
     <script src="../js/player-trophies.js"></script>
 
-    <!-- player-profile-stats-runtime -->
-<script src="../data/matches.js"></script>
-<script src="../data/initial-stats.js"></script>
-<script src="../data/players.js"></script>
-<script src="../js/stats-engine.js"></script>
-<script src="../js/profile-stats.js"></script>
+
+    <!-- Данные ручной статистики этого профиля -->
+    <script>
+    /* ================================================================
+       СТАТИСТИКА ЭТОГО ИГРОКА
+       Меняй числа ТОЛЬКО в этом блоке. Сайт сам посчитает:
+       • общий Winrate
+       • K/D
+       • средние киллы за матч
+       • средний урон за матч
+       • Winrate и количество сыгранных карт
+
+       matches — всего матчей
+       wins    — победы
+       kills   — ВСЕ киллы за все матчи
+       deaths  — ВСЕ смерти за все матчи
+       damage  — ВСЕ нанесённые очки урона за все матчи
+
+       В maps для каждой карты указывай: matches и wins.
+       ================================================================ */
+    window.KIIISK_MANUAL_PROFILE_STATS = {
+        matches: 0,
+        wins: 0,
+        kills: 0,
+        deaths: 0,
+        damage: 0,
+        maps: {
+            Mirage:  { matches: 0, wins: 0 },
+            Inferno: { matches: 0, wins: 0 },
+            Ancient: { matches: 0, wins: 0 },
+            Nuke:   { matches: 0, wins: 0 },
+            Dust2:  { matches: 0, wins: 0 },
+            Anubis:  { matches: 0, wins: 0 },
+            Cache:   { matches: 0, wins: 0 }
+        }
+    };
+</script>
+<script src="../js/manual-profile-stats.js"></script>
+
+    <!-- Локальный график результатов на турнирах -->
+    <script src="../data/profile-charts.js"></script>
+    <script src="../js/profile-chart.js"></script>
+
 </body>
 </html>

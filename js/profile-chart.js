@@ -4,7 +4,12 @@
   const host = document.getElementById("playerTournamentChart");
   const id = document.body.dataset.playerId;
   const data = window.KIIISK_PROFILE_CHARTS?.[id];
-  if (!host || !data || !data.labels?.length) return;
+  const section = document.getElementById("profilePlacementChartSection");
+  if (!host || !data || !data.labels?.length) {
+    if (section) section.hidden = true;
+    return;
+  }
+  if (section) section.hidden = false;
 
   const esc = v => String(v ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[ch]));
   const draw = () => {

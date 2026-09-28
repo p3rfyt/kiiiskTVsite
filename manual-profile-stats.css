@@ -1,0 +1,72 @@
+/* kiiiskTV — ручная статистика игроков */
+.manual-profile-stat-section { margin-top: 18px; }
+.manual-profile-stat-intro { margin: -6px 0 13px; color: #747e7a; font-size: 11px; }
+.manual-stats-overview { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; }
+.manual-stat-card {
+  position:relative; min-height:94px; padding:13px 13px 11px; overflow:hidden;
+  border:1px solid rgba(255,255,255,.07); border-radius:12px;
+  background:linear-gradient(145deg,rgba(26,31,32,.98),rgba(13,17,18,.98));
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+.manual-stat-card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:rgba(200,255,61,.08); }
+.manual-stat-card.is-accent::after { background:var(--accent,#c8ff3d); box-shadow:0 0 12px rgba(200,255,61,.18); }
+.manual-stat-card > span { display:block; color:#747e7a; font-size:9px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+.manual-stat-card > strong { display:block; margin-top:9px; color:#eef3f0; font-size:24px; line-height:1; letter-spacing:-.045em; }
+.manual-stat-card.is-accent > strong { color:var(--accent,#c8ff3d); }
+.manual-stat-card > small { display:block; margin-top:7px; color:#68736f; font-size:9px; line-height:1.25; }
+.manual-stats-section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin:20px 0 9px; }
+.manual-stats-section-head h3 { margin:0; color:#e9efec; font-size:13px; }
+.manual-stats-section-head span { display:block; margin-top:3px; color:#68736f; font-size:10px; }
+.manual-map-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.manual-map-card { padding:12px 13px; border:1px solid rgba(255,255,255,.065); border-radius:11px; background:linear-gradient(180deg,rgba(21,26,27,.96),rgba(14,18,19,.96)); }
+.manual-map-top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.manual-map-top strong { display:block; color:#e7ecea; font-size:12px; font-weight:850; }
+.manual-map-top span { display:block; margin-top:3px; color:#69736f; font-size:9px; }
+.manual-map-top b { color:var(--accent,#c8ff3d); font-size:16px; }
+.manual-map-bar { height:5px; margin:10px 0 7px; overflow:hidden; border-radius:999px; background:#29302f; }
+.manual-map-bar span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#73991d,var(--accent,#c8ff3d)); box-shadow:0 0 10px rgba(200,255,61,.14); }
+.manual-map-bottom { display:flex; justify-content:space-between; gap:10px; color:#68736f; font-size:9px; }
+.manual-stats-empty { display:flex; align-items:center; gap:12px; padding:18px; border:1px dashed rgba(255,255,255,.1); border-radius:12px; background:rgba(255,255,255,.012); }
+.manual-stats-empty-icon { display:grid; place-items:center; width:34px; height:34px; border-radius:9px; background:rgba(200,255,61,.06); color:#74806e; font-weight:900; }
+.manual-stats-empty strong { color:#cbd2cf; font-size:12px; }
+.manual-stats-empty strong::after { content:""; }
+
+/* Локальный график результатов турниров */
+.profile-placement-chart-section, .fame-placement-chart-section { margin-top:18px; }
+.profile-chart-card, .fame-chart-card {
+  position:relative; padding:14px; overflow:hidden; border:1px solid rgba(255,255,255,.07); border-radius:13px;
+  background:linear-gradient(145deg,rgba(22,27,28,.98),rgba(12,16,17,.98));
+}
+.profile-chart-head { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:4px; }
+.profile-chart-head h3 { margin:0; color:#e9efec; font-size:13px; }
+.profile-chart-head span { color:#68736f; font-size:10px; }
+.local-chart-scroll { position:relative; width:100%; overflow-x:auto; overflow-y:hidden; }
+.local-placement-chart { display:block; width:100%; min-width:620px; height:300px; }
+.chart-grid, .fame-chart-grid { stroke:rgba(255,255,255,.07); stroke-width:1; }
+.chart-axis, .fame-chart-axis { fill:#65706d; font-size:9px; }
+.chart-label, .fame-chart-label { fill:#7e8884; font-size:9px; }
+.chart-small, .fame-chart-small { fill:#69736f; font-size:9px; }
+.chart-area { fill:url(#placementFill); }
+.chart-line { fill:none; stroke:var(--accent,#c8ff3d); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 5px rgba(200,255,61,.18)); }
+.chart-point circle:first-child { fill:var(--accent,#c8ff3d); stroke:#0d1110; stroke-width:2; }
+.chart-hit, .fame-chart-hit { fill:transparent; stroke:transparent; }
+.local-chart-tip { position:absolute; top:10px; right:10px; min-width:150px; padding:8px 10px; border:1px solid rgba(200,255,61,.16); border-radius:9px; background:rgba(8,11,10,.95); box-shadow:0 10px 25px rgba(0,0,0,.35); pointer-events:none; }
+.local-chart-tip strong, .local-chart-tip span { display:block; }
+.local-chart-tip strong { color:#eaf0ed; font-size:10px; }
+.local-chart-tip span { margin-top:3px; color:var(--accent,#c8ff3d); font-size:9px; }
+
+/* График Зала славы */
+.fame-placement-chart { min-width:620px; }
+.fame-chart-area { fill:rgba(255,212,90,.14); }
+.fame-chart-line { fill:none; stroke:#ffd45a; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 6px rgba(255,212,90,.18)); }
+.fame-chart-point circle:first-child { fill:#ffd45a; stroke:#17140a; stroke-width:2; }
+.fame-chart-tip strong { color:#fff2b0; }
+.fame-chart-tip span { color:#ffd45a; }
+
+@media (max-width:900px) { .manual-stats-overview { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:620px) {
+  .manual-stats-overview { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .manual-map-grid { grid-template-columns:1fr; }
+  .manual-stat-card > strong { font-size:21px; }
+  .profile-chart-head { align-items:flex-start; flex-direction:column; }
+}
