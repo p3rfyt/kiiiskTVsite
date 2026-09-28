@@ -51,7 +51,6 @@
     { label: "Winrate", value: pct(winrate), sub: "общий показатель", accent: true },
     { label: "K/D", value: fmt(kd, 2), sub: `${fmt(kills, 0)} K · ${fmt(deaths, 0)} D`, accent: true },
     { label: "Средние киллы", value: fmt(avgKills, 1), sub: "за матч" },
-    { label: "Средний урон", value: fmt(avgDamage, 1), sub: "за матч" },
     { label: "Победы", value: fmt(wins, 0), sub: `из ${fmt(matches, 0)} матчей`, accent: true }
   ];
 
