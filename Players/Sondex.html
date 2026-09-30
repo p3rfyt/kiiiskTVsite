@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sondex — Профиль игрока | kiiiskTV</title>
+    <link rel="icon" type="image/png" href="../Image/favicon.png">
+    <!-- Выходим из папки Players в корень к style.css -->
+    <link rel="stylesheet" href="../style.css?v=3">
+    <link rel="stylesheet" href="../trophies.css?v=1">
+    <link rel="stylesheet" href="../manual-profile-stats.css?v=1">
+</head>
+<body class="page-body" data-player-id="Soh1so">
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <div class="logo-badge">k</div>
+                <span class="logo-text">
+                    kiiisk<span class="logo-highlight">TV</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-item">Главная</a>
+                <a href="../players.html" class="nav-item">Kiiisk рейтинг</a>
+                <a href="../all-players.html" class="nav-item">Все игроки</a>
+                <a href="../tournaments.html" class="nav-item">Турниры</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Шапка профиля игрока -->
+        <section class="section-container">
+            <div class="profile-header-card">
+                
+                <!-- Место для фото игрока -->
+                <div class="profile-avatar-container">
+                    <img src="../Image/Players/Sondex.png" alt="Perf" class="profile-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-avatar-placeholder">P</div>
+                </div>
+
+                <!-- Основная информация -->
+                <div class="profile-info-main">
+                    <div class="profile-title-flex">
+                        <h1 class="profile-nickname">Sondex</h1>
+                        <span class="profile-country">
+                            <span class="flag-icon">ru</span> Россия
+                        </span>
+                    </div>
+
+                    <p class="profile-fullname">Михаил Николаев</p>
+
+                    <!-- Характеристики (Возраст, Призовые) -->
+                    <div class="profile-stats-grid">
+                        <div class="profile-stat-item">
+                            <span class="stat-label">Возраст</span>
+                            <span class="stat-value">16 лет</span>
+                        </div>
+                        <div class="profile-stat-item">
+                            <span class="stat-label">Призовые</span>
+                            <span class="stat-value highlight-prize">₽0</span>
+                        </div>
+                    </div>
+
+                     <!-- Социальные сети -->
+                    <div class="profile-socials">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Лента трофеев: данные берутся из data/trophies.js -->
+        <div id="playerTrophyRibbon"></div>
+
+
+
+        <!-- Ручная статистика игрока: данные редактируются в блоке KIIISK_MANUAL_PROFILE_STATS внизу HTML -->
+<section class="section-container manual-profile-stat-section">
+    <h2 class="section-title"><span class="title-bar"></span>Статистика игрока</h2>
+    <p class="manual-profile-stat-intro">Основные показатели и статистика по картам</p>
+    <div id="manualPlayerStats"></div>
+</section>
+
+        
+
+        <!-- Блок Команд -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                Команды
+            </h2>
+
+            <div class="profile-list-grid">
+                <div class="profile-list-item">
+                    <div class="item-title">oSDex</div>
+                    <div class="item-sub">Текущая команда</div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Блок всех турниров -->
+        <section class="section-container">
+            <h2 class="section-title">
+                <span class="title-bar"></span>
+                История турниров
+            </h2>
+
+            <div class="profile-list-grid">
+                <a href="../tournament-kiiisk-6.html" class="profile-list-item">
+                    <div class="item-title">Kiiisk Fall Duo 2026</div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+    <p>© 2026 kiiiskTV — Создатель Perf.</p>
+</footer>
+
+
+    <!-- player-trophies-runtime -->
+    <script src="../data/trophies.js"></script>
+    <script src="../js/player-trophies.js"></script>
+
+
+    <!-- Данные ручной статистики этого профиля -->
+    <script>
+    /* ================================================================
+       СТАТИСТИКА ЭТОГО ИГРОКА
+       Меняй числа ТОЛЬКО в этом блоке. Сайт сам посчитает:
+       • общий Winrate
+       • K/D
+       • средние киллы за матч
+       • средний урон за матч
+       • Winrate и количество сыгранных карт
+
+       matches — всего матчей
+       wins    — победы
+       kills   — ВСЕ киллы за все матчи
+       deaths  — ВСЕ смерти за все матчи
+       damage  — ВСЕ нанесённые очки урона за все матчи
+
+       В maps для каждой карты указывай: matches и wins.
+       ================================================================ */
+    window.KIIISK_MANUAL_PROFILE_STATS = {
+        matches: 2,
+        wins: 1,
+        kills: 28,
+        deaths: 20,
+        maps: {
+            Mirage:  { matches: 0, wins: 0 },
+            Inferno: { matches: 0, wins: 0 },
+            Ancient: { matches: 0, wins: 0 },
+            Nuke:   { matches: 1, wins: 1 },
+            Dust2:  { matches: 1, wins: 0 },
+            Anubis:  { matches: 0, wins: 0 },
+            Cache:   { matches: 0, wins: 0 }
+        }
+    };
+</script>
+<script src="../js/manual-profile-stats.js"></script>
+
+    <!-- Локальный график результатов на турнирах -->
+    <script src="../data/profile-charts.js"></script>
+    <script src="../js/profile-chart.js"></script>
+
+</body>
+</html>
