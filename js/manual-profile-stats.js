@@ -49,7 +49,7 @@
   const cards = [
     { label: "Матчи", value: fmt(matches, 0), sub: `${fmt(wins, 0)} побед · ${fmt(losses, 0)} поражений` },
     { label: "Winrate", value: pct(winrate), sub: "общий показатель", accent: true },
-    { label: "K/D", value: fmt(kd, 2), sub: `${fmt(kills, 0)} K · ${fmt(deaths, 0)} D`, accent: true },
+    { label: "K/D", value: fmt(kd, 2), sub: `${fmt(kills, 0)} K · ${fmt(deaths, 0)} D`, accent: true, negative: kd < 0.99 },
     { label: "Средние киллы", value: fmt(avgKills, 1), sub: "за матч" },
     { label: "Победы", value: fmt(wins, 0), sub: `из ${fmt(matches, 0)} матчей`, accent: true }
   ];
@@ -62,6 +62,15 @@
     }))
     .filter(map => map.matches > 0);
 
+  const mapImages = {
+    Mirage: "mirage.jpg",
+    Inferno: "inferno.jpg",
+    Ancient: "ancient.jpg",
+    Nuke: "nuke.jpg",
+    Dust2: "dust2.jpg",
+    Anubis: "anubis.jpg",
+    Cache: "cache.jpg"
+  };
   const mapHtml = mapEntries.length ? `
     <div class="manual-stats-section-head">
       <div>
@@ -74,7 +83,7 @@
         const mapWinrate = map.matches ? map.wins / map.matches * 100 : 0;
         const mapLosses = map.matches - map.wins;
         return `
-          <div class="manual-map-card">
+          <div class="manual-map-card${mapWinrate < 49 ? " map-winrate-negative" : ""}" style="--map-bg:url(../Image/Maps/${mapImages[map.name] || "mirage.jpg"})">
             <div class="manual-map-top">
               <div>
                 <strong>${esc(map.name)}</strong>
@@ -94,7 +103,7 @@
   host.innerHTML = `
     <div class="manual-stats-overview">
       ${cards.map(card => `
-        <div class="manual-stat-card${card.accent ? " is-accent" : ""}">
+        <div class="manual-stat-card${card.accent ? " is-accent" : ""}${card.negative ? " kd-negative" : ""}">
           <span>${esc(card.label)}</span>
           <strong>${esc(card.value)}</strong>
           <small>${esc(card.sub)}</small>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галерея — kiiiskTV</title>
+<link rel="icon" type="image/png" href="Image/favicon.png">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="gallery.css?v=1">
+</head>
+<body class="page-body">
+<header class="header">
+  <div class="header-container">
+    <a href="index.html" class="logo-link"><div class="logo-badge">K</div><span class="logo-text">kiiisk<span class="logo-highlight">TV</span></span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Главная</a>
+      <a href="players.html" class="nav-item">Kiiisk рейтинг</a>
+      <a href="all-players.html" class="nav-item">Все игроки</a>
+      <a href="tournaments.html" class="nav-item">Турниры</a>
+    </nav>
+  </div>
+</header>
+<main class="gallery-page">
+  <section class="gallery-hero">
+    <div class="gallery-kicker">kiiiskTV / media</div>
+    <h1 class="gallery-title">Галерея</h1>
+    <p class="gallery-subtitle">Фотографии с турниров kiiiskTV.</p>
+  </section>
+  
+  <div class="gallery-filters" id="galleryFilters">
+    <button class="gallery-filter active" data-filter="all">Все</button>
+    <button class="gallery-filter" data-filter="KFC">Kiiisk Fall Cup 2026</button>
+  </div>
+
+  <section class="gallery-grid" id="galleryGrid">
+    <!-- ================================================================= -->
+    <!-- ПРИМЕЧАНИЕ: СЮДА ВСТАВЛЯЮТСЯ ФОТОГРАФИИ                           -->
+    <!--                                                                   -->
+    <!-- 1. src="Image/имя_файла.jpg" — путь к вашему фото в папке Image.    -->
+    <!-- 2. data-category="KFC"       — категория турнира для фильтрации   -->
+    <!--    (должна совпадать с data-filter у кнопки фильтра выше).        -->
+    <!-- 3. alt="..."                  — описание фото (для доступности).  -->
+    <!-- ================================================================= -->
+
+    <!-- Первое фото -->
+    <div class="gallery-card" data-category="KFC">
+      <img src="Image/Gallery/KFC1.jpg" alt="Kiiisk Fall Cup 2026 - Фото 1">
+    </div>
+
+    <div class="gallery-card" data-category="KFC">
+      <img src="Image/Gallery/KFC2.jpg" alt="Kiiisk Fall Cup 2026 - Фото 2">
+    </div>
+
+    <div class="gallery-card" data-category="KFC">
+      <img src="Image/Gallery/KFC3.jpg" alt="Kiiisk Fall Cup 2026 - Фото 3">
+    </div>
+
+    <div class="gallery-card" data-category="KFC">
+      <img src="Image/Gallery/KFC4.jpg" alt="Kiiisk Fall Cup 2026 - Фото 4">
+    </div>
+
+  </section>
+</main>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+  <button class="gallery-close" id="galleryClose" aria-label="Закрыть">×</button>
+  <img id="galleryLightboxImg" src="" alt="">
+</div>
+<script src="gallery.js?v=1"></script>
+</body>
+</html>
