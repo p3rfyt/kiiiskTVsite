@@ -79,7 +79,8 @@
 .manual-map-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
 .manual-map-card {
   position:relative; overflow:hidden; min-height:126px; padding:15px;
-  background:#111614; border-color:rgba(255,255,255,.08);
+  background-color:#111614; background-repeat:no-repeat; background-size:cover; background-position:center;
+  border-color:rgba(255,255,255,.08);
   box-shadow:0 12px 30px rgba(0,0,0,.15);
   isolation:isolate;
 }
@@ -211,4 +212,14 @@
 .manual-map-card.map-winrate-negative .manual-map-bar span {
   background:#ff4f61 !important;
   box-shadow:0 0 12px rgba(255,79,97,.28);
+}
+
+/* v5 map image rendering fix: prevent background tiling */
+.manual-map-card {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.manual-map-card::before {
+  background-image: none !important;
 }
