@@ -1,7 +1,7 @@
 /* kiiiskTV — profile gallery and visual helpers */
 (()=>{
 "use strict";
-const mapImages={Mirage:"../Image/Maps/mirage.jpg",Inferno:"../Image/Maps/inferno.jpg",Ancient:"../Image/Maps/ancient.jpg",Nuke:"../Image/Maps/nuke.jpg",Dust2:"../Image/Maps/dust2.jpg",Anubis:"../Image/Maps/anubis.jpg",Cache:"../Image/Maps/cache.jpg"};
+const mapImages={Mirage:"../map-images/mirage.jpg",Inferno:"../map-images/inferno.jpg",Ancient:"../map-images/ancient.jpg",Nuke:"../map-images/nuke.jpg",Dust2:"../map-images/dust2.jpg",Anubis:"../map-images/anubis.jpg",Cache:"../map-images/cache.jpg"};
 document.querySelectorAll(".manual-map-card").forEach(card=>{const name=card.querySelector(".manual-map-top strong")?.textContent?.trim();if(name&&mapImages[name])card.style.setProperty("--map-bg",`url("${mapImages[name]}")`)});
 const galleryHost=document.getElementById("profileGallery");if(!galleryHost)return;
 const gallery=[["../Image/KDC5/KDC5_1.jpg","Kiiisk Duo Cup 5","Турнирный момент"],["../Image/KDC5/KDC5_2.jpg","Kiiisk Duo Cup 5","Матч турнира"],["../Image/KDC5/KDC5_3.jpg","Kiiisk Duo Cup 5","KiiiskTV"],["../Image/KDC5/KDC5_4.jpg","Kiiisk Duo Cup 5","Турнирная серия"],["../Image/KDC4/KDC4_1.jpg","Kiiisk Duo Cup 4","Турнирный момент"],["../Image/KDC4/KDC4_2.jpg","Kiiisk Duo Cup 4","Матч турнира"],["../Image/KDC3/KDC3_1.jpg","Kiiisk Duo Cup 3","Турнирная серия"],["../Image/KDC2/KDC2_1.jpg","Kiiisk Duo Cup 2","Турнирный момент"]];
