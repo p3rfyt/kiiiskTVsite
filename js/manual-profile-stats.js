@@ -83,7 +83,7 @@
         const mapWinrate = map.matches ? map.wins / map.matches * 100 : 0;
         const mapLosses = map.matches - map.wins;
         return `
-          <div class="manual-map-card${mapWinrate < 49 ? " map-winrate-negative" : ""}" style="--map-bg:url(../map-images/${mapImages[map.name] || "mirage.jpg"})">
+          <div class="manual-map-card${mapWinrate < 49 ? " map-winrate-negative" : ""}" style="background-image:url('../map-images/${mapImages[map.name] || "mirage.jpg"}')">
             <div class="manual-map-top">
               <div>
                 <strong>${esc(map.name)}</strong>
