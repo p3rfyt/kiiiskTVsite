@@ -1,0 +1,12 @@
+/* Tournament readability patch: approximately +10% */
+body:has(.tournament-hero) .main-container{width:min(1320px,calc(100% - 36px));max-width:1320px}
+body:has(.tournament-hero) .hero-title{font-size:clamp(38px,4.2vw,54px);line-height:1.12}
+body:has(.tournament-hero) .section-title{font-size:clamp(22px,2vw,28px)}
+body:has(.tournament-hero) .section-container{margin-top:28px;margin-bottom:28px}
+body:has(.tournament-hero) .team-card{padding:19px 20px}
+body:has(.tournament-hero) .team-name,body:has(.tournament-hero) .team-name-mu{font-size:1.1em}
+body:has(.tournament-hero) .team-roster{font-size:1.08em;line-height:1.6}
+body:has(.tournament-hero) .group-heading{font-size:1.1em;margin-bottom:14px}
+body:has(.tournament-hero) .badge,body:has(.tournament-hero) .prize-tag{font-size:1.05em;padding:7px 10px}
+body:has(.tournament-hero) .grid-2-col,body:has(.tournament-hero) .grid-4-col{gap:16px}
+@media(max-width:700px){body:has(.tournament-hero) .main-container{width:calc(100% - 22px)}body:has(.tournament-hero) .team-card{padding:15px}}

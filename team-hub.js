@@ -1,0 +1,1 @@
+const search=document.getElementById('teamSearch');if(search){search.addEventListener('input',()=>{const q=search.value.trim().toLocaleLowerCase('ru');document.querySelectorAll('.team-row').forEach(row=>{row.hidden=!row.innerText.toLocaleLowerCase('ru').includes(q)})})}

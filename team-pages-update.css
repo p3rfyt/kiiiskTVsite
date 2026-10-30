@@ -1,0 +1,66 @@
+/* Дополнение для нового раздела команд и читаемости сайта. */
+.team-directory-page{font-size:16px}.team-directory-page .teams-page,.team-directory-page .team-profile{width:min(1240px,calc(100% - 40px));max-width:1240px}.team-eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--accent,#b7ff2a)}.team-search-wrap{display:flex;align-items:center;gap:12px;max-width:440px;margin:0 0 18px;padding:0 15px;background:#202a34;border:1px solid #394653;border-radius:5px}.team-search-wrap span{font-size:23px;color:#aab7c3}.team-search-wrap input{width:100%;padding:14px 0;background:transparent;border:0;outline:0;color:#edf3f8;font:inherit}.team-directory-note{margin:18px 0;color:#9ba8b4;font-size:13px;line-height:1.7}.team-directory-note code{color:#d9e5ef}.team-back{display:inline-block;margin:0 0 14px;color:#aab7c3;text-decoration:none;font-size:14px}.team-back:hover{color:#b7ff2a}.team-profile-hero{--team-color:#b7ff2a}.team-cover{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:#3d4a57;padding:2px 2px 0;min-height:190px}.team-cover-player{position:relative;min-width:0;height:205px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#354351,#202b36)}.team-cover-player img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}.team-cover-player span{position:relative;z-index:1;width:100%;padding:10px 5px;text-align:center;background:rgba(10,15,21,.75);color:#f4f7fa;font-size:13px;font-weight:800}.team-profile-info{padding:24px 26px 26px}.team-profile-title{gap:16px}.team-logo-large{overflow:hidden}.team-logo-large img{width:100%;height:100%;object-fit:contain;padding:5px}.team-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.team-tags span{padding:5px 9px;border-radius:4px;background:#34414e;color:#c8d3dd;font-size:11px}.team-description{max-width:900px;margin:20px 0 0;font-size:15px;line-height:1.75;color:#c1ccd6}.team-stats{grid-template-columns:repeat(4,minmax(0,1fr))}.team-coach{font-size:15px!important}.team-content-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;align-items:start}.team-content-grid .team-section{margin-top:0}.team-roster{grid-template-columns:repeat(3,minmax(0,1fr))}.team-roster-player{min-height:240px}.team-trophy-track{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}.team-trophy{border-bottom:1px solid rgba(255,255,255,.06)}.team-former-list{padding:8px 18px}.team-member-card{display:flex;align-items:center;gap:12px;padding:12px 0;color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}.team-member-card:last-child{border-bottom:0}.team-member-card img{width:48px;height:48px;object-fit:cover;border-radius:5px;background:#34414e}.team-member-card span{display:flex;flex-direction:column;gap:5px}.team-member-card small,.team-muted{color:#9ba8b4;font-size:12px}.team-table-scroll{overflow-x:auto}.team-history{min-width:560px}.team-history th,.team-history td{font-size:14px;padding:14px 17px}.team-extra-info p{margin:8px 0}.team-row{min-height:84px}.team-row-name{font-size:20px}.team-row-sub{font-size:13px}.team-row-meta,.team-row-score{font-size:13px}
+/* Увеличение масштаба турнирных страниц и профилей игроков без изменения их логики. */
+body.page-body:has(.tournament-hero) .main-container{width:min(1400px,calc(100% - 32px));max-width:1400px}body.page-body:has(.tournament-hero) .hero-title{font-size:clamp(40px,4.5vw,59px)}body.page-body:has(.tournament-hero) .section-title{font-size:clamp(24px,2vw,30px)}body.page-body:has(.tournament-hero) .team-card{padding:22px}body.page-body:has(.tournament-hero) .team-roster{font-size:1.08em;line-height:1.6}
+@media(min-width:900px){body:has(.profile-main),body:has(.player-profile),body:has(.profile-container){font-size:1.04rem}}
+@media(max-width:760px){.team-directory-page .teams-page,.team-directory-page .team-profile{width:calc(100% - 22px);padding-left:0;padding-right:0}.team-row{grid-template-columns:28px 44px minmax(0,1fr) 68px;gap:9px}.team-row-meta{display:none}.team-row-name{font-size:16px}.team-cover{grid-template-columns:repeat(3,minmax(0,1fr))}.team-cover-player{height:165px}.team-cover-player:nth-child(n+4){display:none}.team-profile-info{padding:18px}.team-logo-large{width:52px;height:52px;flex-basis:52px}.team-profile-title h1{font-size:27px}.team-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.team-content-grid{grid-template-columns:1fr}.team-roster{grid-template-columns:repeat(2,minmax(0,1fr))}.team-roster-player{min-height:195px}.team-trophy-track{grid-template-columns:repeat(2,minmax(0,1fr))}.team-directory-note{font-size:12px}}
+
+/* === Второй проход: единый графитовый стиль kiiiskTV === */
+.team-directory-page{background:var(--bg,#171d23);color:var(--text,#e8edf2)}
+.team-directory-page .teams-page,.team-directory-page .team-profile{max-width:1240px;width:min(1240px,calc(100% - 40px));margin-top:30px}
+.team-directory-page .teams-heading{align-items:center;padding:0 0 16px;border-bottom:1px solid var(--line,#303b45)}
+.team-directory-page .teams-heading h1,.team-directory-page .team-profile-title h1{color:var(--text,#e8edf2);letter-spacing:-.035em}
+.team-directory-page .teams-heading p{color:var(--muted,#9ba8b4)}
+.team-directory-page .team-row,.team-directory-page .team-profile-hero,.team-directory-page .team-section,.team-directory-page .team-stat-card,.team-directory-page .team-history-wrap{background:var(--card,#222b34);border:1px solid var(--line,#303b45);border-radius:5px;box-shadow:none}
+.team-directory-page .team-row{margin-bottom:8px;padding:13px 17px;min-height:88px;transition:border-color .16s,background .16s}
+.team-directory-page .team-row:hover{background:#28333e;border-color:var(--accent,#b7ff2a);transform:none}
+.team-directory-page .team-row-name{font-size:21px;font-weight:750;color:var(--text,#e8edf2)}
+.team-directory-page .team-row-sub,.team-directory-page .team-row-meta{color:var(--muted,#9ba8b4)}
+.team-directory-page .team-row-logo{background:#303c47;border-radius:4px}
+.team-directory-page .team-search-wrap{max-width:100%;border-radius:5px;background:var(--card,#222b34);border-color:var(--line,#303b45)}
+.team-directory-page .team-search-wrap:focus-within{border-color:var(--accent,#b7ff2a)}
+.team-directory-page .team-profile-hero{overflow:hidden}
+.team-directory-page .team-cover{background:#394652;border-bottom:3px solid var(--accent,#b7ff2a)}
+.team-directory-page .team-cover-player{background:linear-gradient(180deg,#35414c 0%,#202831 100%)}
+.team-directory-page .team-cover-player span{font-size:14px;background:rgba(18,24,30,.86)}
+.team-directory-page .team-profile-info{background:#222b34}
+.team-directory-page .team-tags span{background:#303b46;border:1px solid #3a4652;border-radius:4px}
+.team-directory-page .team-stats{gap:10px}
+.team-directory-page .team-stat-card{padding:14px 16px}
+.team-directory-page .team-stat-value{font-size:22px;color:var(--text,#e8edf2)}
+.team-directory-page .team-stat-label{color:var(--muted,#9ba8b4)}
+.team-directory-page .team-section{padding:0;overflow:hidden}
+.team-directory-page .team-section-head{padding:17px 19px;background:#26313b;border-bottom:1px solid var(--line,#303b45)}
+.team-directory-page .team-section-head h2{font-size:19px;color:var(--text,#e8edf2)}
+.team-directory-page .team-roster-list{display:block;padding:4px 18px;grid-template-columns:none}
+.team-directory-page .team-roster-list .team-roster-player{display:flex;align-items:center;min-height:0;height:auto;padding:14px 2px;border-radius:0;background:transparent;border-bottom:1px solid rgba(255,255,255,.07);text-decoration:none;box-shadow:none}
+.team-directory-page .team-roster-list .team-roster-player:last-child{border-bottom:0}
+.team-directory-page .team-roster-list .team-roster-player img{display:none!important}
+.team-directory-page .team-roster-list .team-roster-label{position:static;display:flex;flex-direction:column;gap:4px;width:100%;padding:0;background:transparent;color:var(--text,#e8edf2);font-size:15px;text-align:left}
+.team-directory-page .team-roster-list .team-roster-label small{color:var(--muted,#9ba8b4);font-size:12px}
+.team-directory-page .team-former-plain{padding:4px 18px}
+.team-directory-page .team-former-plain .team-member-card{gap:0;padding:14px 2px;border-radius:0;background:transparent;box-shadow:none}
+.team-directory-page .team-former-plain .team-member-card img{display:none!important}
+.team-directory-page .team-former-plain .team-member-card span{gap:4px}
+.team-directory-page .team-former-plain .team-member-card b{font-size:15px;color:var(--text,#e8edf2)}
+.team-directory-page .team-history{min-width:560px}
+.team-directory-page .team-history th{background:#26313b;color:#b9c4ce}
+.team-directory-page .team-history td{color:#dce3e9}
+.team-directory-page .team-trophy{background:#26313b;border:1px solid #35414d;border-radius:4px}
+.team-directory-page .team-trophy-track{padding:14px}
+
+/* +10% именно для метрик профилей и турнирных блоков: призовые, возраст, места и сетка. */
+body.page-body:has(.profile-stats-grid) .profile-stats-grid{gap:9px!important}
+body.page-body:has(.profile-stats-grid) .profile-stat-item{padding:13px!important;min-height:76px}
+body.page-body:has(.profile-stats-grid) .profile-stat-value,body.page-body:has(.profile-stats-grid) .profile-stat-value-wins{font-size:1.1em!important}
+body.page-body:has(.tournament-hero) .placements-wrapper{transform:scale(1.035);transform-origin:top center;width:calc(100% / 1.035);margin-bottom:12px}
+body.page-body:has(.tournament-hero) .placements-wrapper .team-card{padding:calc(18px * 1.1) calc(20px * 1.1)!important}
+body.page-body:has(.tournament-hero) .placements-wrapper .team-card-header,body.page-body:has(.tournament-hero) .placements-wrapper .team-roster{font-size:1.1em}
+body.page-body:has(.tournament-hero) .bracket-wrapper{font-size:1.1em}
+body.page-body:has(.tournament-hero) .bracket-container{gap:12px!important}
+body.page-body:has(.tournament-hero) .bracket-column{min-width:190px;gap:9px!important}
+body.page-body:has(.tournament-hero) .bracket-header{font-size:10px!important;padding:9px 6px}
+body.page-body:has(.tournament-hero) .bracket-matches{gap:10px!important}
+body.page-body:has(.tournament-hero) .match-card{font-size:1.05em;padding:10px!important}
+body.page-body:has(.tournament-hero) .prize-tag{font-size:1.1em!important;padding:8px 11px!important}
+@media(max-width:760px){body.page-body:has(.tournament-hero) .placements-wrapper{transform:none;width:100%}.team-directory-page .teams-page,.team-directory-page .team-profile{width:calc(100% - 22px)}.team-directory-page .team-row{padding:11px}.team-directory-page .team-row-name{font-size:17px}}
