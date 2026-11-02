@@ -9,6 +9,17 @@
  */
 
 window.KIIISK_TROPHIES = {
+    
+    ksc: {
+        name: "Kiiisk School Cup 2026",
+        series: "Kiiisk School Cup",
+        image: "../Image/Trophies/kiiiskSchool.png",
+        date: "1-2 Ноября 2026",
+        href: "../tournament-kiiisk-trio.html"
+
+    },
+
+
     kfc: {
         name: "Kiiisk Fall Cup 2026",
         series: "Kiiisk Fall Cup",
@@ -106,6 +117,9 @@ window.KIIISK_TROPHIES = {
 };
 
 window.KIIISK_PLAYER_TROPHIES = {
+    shitsuren: [
+        { id: "ksc", team: "Perf Team" },
+    ],
     Chistoobatya: [{ id: "kdc5", team: "Porno" }],
     Demon: [
         { id: "kdc4", team: "Kup3r" },
@@ -125,12 +139,14 @@ window.KIIISK_PLAYER_TROPHIES = {
         { id: "fivevfive", team: "Сказка" }
     ],
     perf: [
+        { id: "ksc", team: "Perf Team" },
         { id: "kdc4", team: "Kup3r" },
+        { id: "kdc3", team: "Perf Team" },
+        { id: "wingman20", team: "Perf Team" } 
+    ],
+    pinkman: [
+        { id: "ksc", team: "Perf Team" },
         { id: "kdc3", team: "Perf Team" },
         { id: "wingman20", team: "Perf Team" }
     ],
-    pinkman: [
-        { id: "kdc3", team: "Perf Team" },
-        { id: "wingman20", team: "Perf Team" }
-    ]
 };
