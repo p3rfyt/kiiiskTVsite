@@ -13,7 +13,7 @@ window.KIIISK_TROPHIES = {
     ksc: {
         name: "Kiiisk School Cup 2026",
         series: "Kiiisk School Cup",
-        image: "../Image/Trophies/kiskschoolcup.png",
+        image: "../Image/Trophies/kiiisk-school-cup-2026.png?v=2",
         date: "1-2 Ноября 2026",
         href: "../tournament-kiiisk-trio.html"
 
