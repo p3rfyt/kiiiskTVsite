@@ -19,7 +19,6 @@ window.KIIISK_TROPHIES = {
 
     },
 
-
     kfc: {
         name: "Kiiisk Fall Cup 2026",
         series: "Kiiisk Fall Cup",
@@ -120,12 +119,17 @@ window.KIIISK_PLAYER_TROPHIES = {
     shitsuren: [
         { id: "ksc", team: "Perf Team" },
     ],
+
     Chistoobatya: [{ id: "kdc5", team: "Porno" }],
+    
     Demon: [
         { id: "kdc4", team: "Kup3r" },
         { id: "wingmanS2", team: "Мамкины Знахари" }
     ],
-    Romie: [{ id: "kfc", team: "Porno" }, { id: "kdc5", team: "Porno" }],
+
+    Romie: [ 
+        { id: "kfc", team: "Porno" },
+             { id: "kdc5", team: "Porno" }],
     
     m1smi13: [
         { id: "kdc2", team: "Lower Members" },
